@@ -62,3 +62,21 @@
     font-weight: 600; /*テキストの高さを設定します。*/
     transition: all .3s; /*アニメーションの速度を設定します。*/
 }
+
+.BOT_invitation {
+    display: flex;
+    justify-content: center;
+    align-items: center; /上下のどこに配置するか設定します。/
+    width: 15%;  /要素の横幅を設定します。/
+    height:65px; /要素の高さを設定します。/
+    text-decoration: none;/テキストの装飾を設定します。/
+    color: #ffffff; /テキストの色を設定します。/
+    font-size: 20px; /テキストサイズを設定します。/
+    letter-spacing: 0.05em; /テキストの水平方向の字間のスペースを設定します。/
+    font-weight: 600; /テキストの高さを設定します。/
+    background-color: #0071BB;
+    border-radius: 100px;
+    font-weight: 600;
+    position: relative;
+    transition: all .3s; /アニメーションの速度を設定します。/
+}
