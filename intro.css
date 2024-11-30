@@ -88,21 +88,23 @@ body {
   }
 
 .return-button {
-  margin-top: 20px;
-  text-align: center;
+  position: fixed; /* 固定位置に配置 */
+  top: 20px; /* 上からの距離 */
+  left: 20px; /* 左からの距離 */
+  z-index: 1000; /* 他の要素の上に表示 */
 }
 
 .return-button a {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px 15px;
   background-color: #007BFF;
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .return-button a:hover {
   background-color: #0056b3;
 }
-
