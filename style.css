@@ -1,82 +1,125 @@
-@charset "utf-8";
-
-
-/*Gakusi BOT/*
-                                                           
-
-
-
-/*メニューバー*/
-
-
-.gnavi__title{
-    width: 500px;
-    background-color: aqua;
-    width: 100; /*要素の幅を設定します。*/
-    height: 30px; /*要素の高さを設定します。*/
-    background-color: aquamarine; /*背景色を設定します。*/
-    position: relative; /*要素の位置を設定します。*/
-
-}
-.gnavi {
-    width: 1200px; /*要素の幅を設定します。*/
-    margin: 0% auto; /*ほかの要素とのスペース幅を設定します。*/
-}
-.gnavi__lists {
-    display: flex; /*要素の並び方 ( 横並び ) を設定します。*/
-}
-.gnavi__list {
-    width: 10%; /*要素の幅を設定します。*/
-    height: 60px; /*要素の高さを設定します。*/
-    background-color: aquamarine; /*背景色を設定します。*/
-    position: relative; /*要素の位置を設定します。*/
-    transition: all .3s; /*アニメーションの速度を設定します。*/
-    list-style:none /*・を削除します*/
-}
-.gnavi__list:hover {
-    background-color: aqua; /*背景色を設定します。*/
-}
-.gnavi__list:not(:first-child)::before {
-    content: ""; /*挿入するプロパティーの設定します。*/
-    width: 0%; /*要素の横幅を設定します。*/
-    height: 100%; /*要素の高さを設定します。*/
-    background-color: aqua; /*要素の背景色を設定します。*/
-    position: absolute; /*要素の位置を設定します。*/
-    top: 10; /*上からの配置位置を設定します。*/
-    left: 0; /*左からの配置位置を設定します。*/
-    transition: all .3s; /*アニメーションの速度を設定します*/
-}
-.gnavi__list:hover::before {
-    background-color: #0071BB; /*背景色を設定します。*/
-}
-.gnavi__list a {
-    display: flex; /*要素の並び方 ( 横並び ) を設定します。 */
-    justify-content: center; /*要素の間隔を設定します。*/
-    align-items: center; /*上下のどこに配置するか設定します。*/
-    width: 100%;  /*要素の横幅を設定します。*/
-    height: 100%; /*要素の高さを設定します。*/
-    text-decoration: none;/*テキストの装飾を設定します。*/
-    color: #1b4059; /*テキストの色を設定します。*/
-    font-size: 15px; /*テキストサイズを設定します。*/
-    letter-spacing: 0.05em; /*テキストの水平方向の字間のスペースを設定します。*/
-    font-weight: 600; /*テキストの高さを設定します。*/
-    transition: all .3s; /*アニメーションの速度を設定します。*/
+/* 全体のスタイル */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-.BOT_invitation {
+/* ヘッダー部分 */
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* ナビゲーション */
+ul.gnavi__lists {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
-    align-items: center; /上下のどこに配置するか設定します。/
-    width: 15%;  /要素の横幅を設定します。/
-    height:65px; /要素の高さを設定します。/
-    text-decoration: none;/テキストの装飾を設定します。/
-    color: #ffffff; /テキストの色を設定します。/
-    font-size: 20px; /テキストサイズを設定します。/
-    letter-spacing: 0.05em; /テキストの水平方向の字間のスペースを設定します。/
-    font-weight: 600; /テキストの高さを設定します。/
-    background-color: #0071BB;
-    border-radius: 100px;
-    font-weight: 600;
-    position: relative;
-    transition: all .3s; /アニメーションの速度を設定します。/
+    background-color: #34495e;
+}
+
+.gnavi__list {
+    margin: 0 15px;
+}
+
+.gnavi__list a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.gnavi__list a:hover {
+    text-decoration: underline;
+}
+
+/* ボット導入リンク */
+.BOT_invitation {
+    color: #fff;
+    background-color: #27ae60;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.BOT_invitation:hover {
+    background-color: #2ecc71;
+}
+
+/* ニュースセクション */
+section.NEWS_list {
+    padding: 40px;
+    background-color: #ecf0f1;
+    text-align: center;
+}
+
+.NEWS_tatle {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.NEWS_text {
+    font-size: 18px;
+    color: #7f8c8d;
+}
+
+/* Gakusei BOTの特徴 */
+h1[name="develope"] {
+    font-size: 28px;
+    color: #2c3e50;
+    text-align: center;
+    margin-top: 40px;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+ul li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* 概要セクション */
+section[name="概要"] {
+    background-color: #ecf0f1;
+    padding: 30px;
+}
+
+h1[name="概要"] {
+    font-size: 24px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+ul li {
+    font-size: 18px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* フッター */
+h3 {
+    font-size: 18px;
+    color: #7f8c8d;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* 著作権表示 */
+h25 {
+    font-size: 14px;
+    color: #7f8c8d;
+    text-align: center;
+    margin-top: 40px;
 }
