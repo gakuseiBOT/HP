@@ -3,8 +3,28 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "",
+      url: "https://gakuseibot.pkopko.jp/",
       priority: 1,
-    }
+    },
+    {
+      url: "https://gakuseibot.pkopko.jp/announce",
+      priority: 1,
+    },
+    {
+      url: "https://gakuseibot.pkopko.jp/contact",
+      priority: 1,
+    },
+    {
+      url: "https://gakuseibot.pkopko.jp/howto",
+      priority: 1,
+    },
+    {
+      url: "https://gakuseibot.pkopko.jp/member",
+      priority: 1,
+    },
+    {
+      url: "https://gakuseibot.pkopko.jp/tos",
+      priority: 1,
+    },
   ];
 }
