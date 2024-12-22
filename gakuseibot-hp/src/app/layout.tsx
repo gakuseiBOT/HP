@@ -44,8 +44,8 @@ export default function RootLayout({
       </Head>
       <GoogleAnalytics gaId={"GA-ID"} />
       <body className="w-full">
-        <header className="flex flex-col justify-center items-center h-160 bg-[#2c3e50] text-white w-full">
-          <Link href="/" className="m-5">
+        <header className="flex flex-col justify-center items-center bg-[#2c3e50] text-white w-full">
+          <Link href="/" className="m-3">
             <Image
               src={"/img/logo.png"}
               alt="UniProject's Logo"
