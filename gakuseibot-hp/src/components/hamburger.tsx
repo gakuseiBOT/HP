@@ -9,7 +9,7 @@ import Image from "next/image";
  * 
  * @returns The rendered Hamburger component.
  */
-const Hamburger = () => {
+const Hamburger = ({ links }: { links: { label: string; link: string }[] }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
         <nav className="relative z-10 pr-8 pl-2 py-2 flex justify-between items-center text-slate-950 min-[900px]:hidden ">
@@ -71,7 +71,7 @@ const Hamburger = () => {
                             </button>
                         </div>
                         <div>
-                            <NavLinks setIsMenuOpen={setIsMenuOpen} />
+                            <NavLinks setIsMenuOpen={setIsMenuOpen} links={links} />
                         </div>
                     </div>
                 </div>

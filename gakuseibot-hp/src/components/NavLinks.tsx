@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 type PropsType = {
+    links: { label: string; link: string }[];
     propClass?: string;
     setIsMenuOpen?: (arg0: boolean) => void;
 };
@@ -13,13 +14,8 @@ type PropsType = {
  * @param propClass - The additional class name for styling.
  * @param setIsMenuOpen - The function to set the state of the menu open status.
  */
-const NavLinks = ({ propClass, setIsMenuOpen }: PropsType) => {
+const NavLinks = ({ links, propClass, setIsMenuOpen }: PropsType) => {
     const currentPath = usePathname();
-
-    const links = [
-        { label: "ABOUT", href: "/about" },
-        { label: "CONTACT", href: "/contact" }
-    ];
 
     return (
         <div
@@ -31,9 +27,9 @@ const NavLinks = ({ propClass, setIsMenuOpen }: PropsType) => {
                     <Link
                         //? Close hamburger menu
                         onClick={() => setIsMenuOpen && setIsMenuOpen(false)}
-                        href={link.href}
+                        href={link.link}
                         className={`w-[fit-content] hover:bg-slate-700 hover:text-primary/60 px-3 py-1 rounded-md text-sm font-medium cursor-pointer text-[1.1rem]
-            ${currentPath == link.href
+            ${currentPath == link.link
                                 ? "bg-slate-700 cursor-default shadow-1 text-primary/70 hover:text-primary/60 "
                                 : ""
                             }`}
