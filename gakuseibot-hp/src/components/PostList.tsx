@@ -46,9 +46,10 @@ const PostList = ({ dirname, posts, className, btnClassName, listClassName, btnD
                         description={post.description}
                     />
                 ))}
+                {posts.length === 0 && <p>記事がありません。</p>}
             </div>
-            {btnClassName && (
-                <Button<'button'> href={`/${dirname}`} disabled={btnDisabled} className={btnClassName}>
+            {!btnDisabled && (
+                <Button<'button'> href={`/${dirname}`} className={btnClassName}>
                     もっと見る
                 </Button>
             )}
