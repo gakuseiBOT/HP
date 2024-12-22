@@ -1,3 +1,4 @@
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Head from "next/head";
@@ -19,7 +20,9 @@ export default function RootLayout({
       <GoogleAnalytics gaId={"GA-ID"} />
       <body className="w-full">
         <Header />
-        {children}
+        <AppRouterCacheProvider>
+          {children}
+        </AppRouterCacheProvider>
         <footer className="p-4 bg-gray-800 text-white w-full flex lg:flex-row flex-col items-center justify-center lg:justify-between relative">
           <Link href={"https://github.com/gakuseiBOT/HP/graphs/contributors"} className="text-center hover:text-blue mx-auto">
             Copyright&copy;2024 GakuseiBOTコミュニティ All Rights Reserved. See credits here.

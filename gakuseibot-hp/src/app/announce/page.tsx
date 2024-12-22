@@ -5,6 +5,8 @@ import PostList from "@/components/PostList";
 import { getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
+    title: "アナウンス一覧 - gakuseiBotコミュニティ",
+    description: "gakuseiBOTのアナウンス一覧です。",
 };
 
 const ContactsPage: NextPage = () => {

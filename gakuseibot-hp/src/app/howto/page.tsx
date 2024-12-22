@@ -4,7 +4,8 @@ import { Metadata } from "next";
 import CmdCard from "@/components/cmdCard";
 
 export const metadata: Metadata = {
-
+    title: "コマンド一覧 - gakuseiBotコミュニティ",
+    description: "gakuseiBOTのコマンド一覧です。",
 };
 
 const ContactsPage: NextPage = () => {
