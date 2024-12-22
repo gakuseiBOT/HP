@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import { Button } from "@/components/button";
 import React from "react";
 import { Metadata } from "next";
 import PostList from "@/components/PostList";
