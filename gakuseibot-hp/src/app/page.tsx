@@ -11,7 +11,7 @@ export default function Home() {
   const posts = getRecentPosts('announce', 4);
   return (
     <main className="flex min-h-screen w-full flex-col items-center bg-white text-black space-y-0">
-      <section className="w-full min-h-[40vh] border flex flex-col items-center w-full bg-white text-black space-y-6 justify-center">
+      <section className="w-full border flex flex-col items-center p-5 min-h-[370px] w-full bg-white text-black space-y-6 justify-center">
         <h2 className="text-lg">
           学生のためのDiscord Bot
         </h2>
@@ -24,15 +24,15 @@ export default function Home() {
           招待する
         </Button>
       </section>
-      <section className='w-full min-h-[40vh] flex flex-col items-center space-y-5 p-5 justify-center'>
+      <section className='w-full min-h-[370px] flex flex-col items-center space-y-5 p-5 justify-center'>
         <h1 className='text-2xl font-semibold'>最新のお知らせ</h1>
-        <PostList posts={posts} dirname='announce' className='lg:w-2/5 w-4/5 mx-auto h-[10vh] justify-center' />
+        <PostList posts={posts} dirname='announce' className='lg:w-2/5 w-4/5 mx-auto h-[90px] justify-center' />
       </section>
-      <section id="join" className="flex space-y-3 items-center min-w-full lg:p-20 p-10 flex-col bg-gray-100">
+      <section id="join" className="flex space-y-5 items-center min-w-full lg:p-20 p-10 flex-col bg-gray-100">
         <h3 className="text-2xl font-semibold">
           <a href="#join">サポートサーバー</a>
         </h3>
-        <div className="text-center flex flex-col space-y-3">
+        <div className="text-center min-h-[150px] flex flex-col space-y-5">
           <p>サポートサーバーでは、Botに関する最新情報を得たり、サポートを受けたりすることができます。</p>
           <div className='flex lg:flex-row flex-col justify-center items-center lg:space-x-5 lg:space-y-0 space-y-3'>
             <Button<'Link'> href="/discord" className="lg:w-2/5 w-full" disabled={false}>

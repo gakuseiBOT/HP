@@ -48,7 +48,7 @@ const PostList = ({ dirname, posts, className, btnClassName, listClassName, btnD
                 ))}
                 {posts.length === 0 && <p>記事がありません。</p>}
             </div>
-            {!btnDisabled && (
+            {(!btnDisabled && !(posts.length === 0)) && (
                 <Button<'button'> href={`/${dirname}`} className={btnClassName}>
                     もっと見る
                 </Button>
