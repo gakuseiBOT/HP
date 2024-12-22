@@ -6,25 +6,6 @@ import PostList from "@/components/PostList";
 import { getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
-    title: 'アナウンス一覧 - UniProject',
-    description:
-        'お知らせ一覧です',
-    twitter: {
-        card: 'summary',
-        site: '@UniPro_digital',
-        title: 'アナウンス一覧 - UniProject',
-        description: "お知らせ一覧です",
-    },
-    openGraph: {
-        type: 'website',
-        url: 'https://www.uniproject.jp',
-        title: 'アナウンス一覧 - UniProject',
-        description:
-            'お知らせ一覧です。',
-    },
-    alternates: {
-        canonical: "https://www.uniproject.jp/announce",
-    },
 };
 
 const ContactsPage: NextPage = () => {
