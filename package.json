@@ -1,0 +1,49 @@
+{
+  "name": "unipro-site",
+  "version": "1.10.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "overrides": {
+    "eslint": "^8",
+    "@types/react": "19.0.2",
+    "@types/react-dom": "19.0.2"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.2.1",
+    "@mui/joy": "^5.0.0-beta.51",
+    "@mui/material": "^6.2.1",
+    "@mui/material-nextjs": "^6.2.1",
+    "@next/third-parties": "15.1.2",
+    "gray-matter": "^4.0.3",
+    "next": "15.1.2",
+    "prettier": "^3.3.3",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-markdown": "^9.0.1",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.0",
+    "remark-html": "^16.0.1",
+    "remark-slug": "^7.0.1",
+    "remark-toc": "^9.0.0",
+    "swiper": "^11.1.14",
+    "tocbot": "^4.32.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "19.0.2",
+    "@types/react-dom": "19.0.2",
+    "eslint": "^8",
+    "eslint-config-next": "15.1.2",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5"
+  }
+}

@@ -1,5 +1,27 @@
-# HP作成方法
-Codeを更新した場合は報告してください。
-基本的に開発者関係者以外は編集できません。
-開発者の申請は公式discordサーバー（公式サイトにリンクあり）か@akiy2009までご連絡下さい。
-※一定の条件があります。
+# HP
+
+This is a HP of gakusei BOT Community.
+
+## Deploy for GitHub Pages
+
+Push main branch.
+
+And Conigure Deployment on Vercel.
+
+## Development
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
