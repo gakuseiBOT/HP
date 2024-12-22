@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const ContactsPage: NextPage = () => {
   return (
-    <main className="flex min-h-[80vh] flex-col items-center bg-white text-black space-y-0">
+    <main className="flex min-h-screen flex-col items-center bg-white text-black space-y-0">
       <section
         id="contact"
         className="flex flex-col items-center justify-center flex-1 w-full space-y-8"
