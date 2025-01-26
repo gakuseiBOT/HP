@@ -7,6 +7,9 @@ jobs:
     deployment:
         runs-on: ubuntu-latest
         concurrency: Preview
+        environment:
+            name: Preview
+            url: ${{ steps.get_release_url.outputs.release_url }}
         steps:
         - uses: actions/checkout@v4
         - name: Install Vercel CLI
