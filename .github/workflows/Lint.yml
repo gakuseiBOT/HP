@@ -19,5 +19,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
+    - name: npm init
+      run: npm install
+
     - name: Next lint
-      run: next lint
+      run: npm run lint
