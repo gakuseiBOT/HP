@@ -1,0 +1,30 @@
+name: Vercel Preview Deployment
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+    deployment:
+        runs-on: ubuntu-latest
+        concurrency: Preview
+        steps:
+        - uses: actions/checkout@v4
+        - name: Install Vercel CLI
+          run: npm install -g vercel
+        - name: Deploy with Vercel
+          run: vercel deploy --target=Preview --token=${{secrets.VERCEL_TOKEN}} >deployment-url.txt 2>error.txt
+        - name: Set release url
+          id: get_release_url
+          run: echo release_url=$(cat deployment-url.txt) >> $GITHUB_OUTPUT
+        - name: Comment on PR
+          uses: actions/github-script@v3
+          with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            script: |
+              github.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `Preview deployment is live at ${steps.get_release_url.outputs.release_url}`
+              })
+        
