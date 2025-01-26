@@ -11,6 +11,8 @@ jobs:
         - uses: actions/checkout@v4
         - name: Install Vercel CLI
           run: npm install -g vercel
+        - name: Link Vercel Project
+          run: vercel link --token=${{secrets.VERCEL_TOKEN}} --project ${{secrets.VERCEL_PROJECT}} --yes
         - name: Deploy with Vercel
           run: vercel deploy --target=Preview --token=${{secrets.VERCEL_TOKEN}} >deployment-url.txt 2>error.txt
         - name: Set release url
