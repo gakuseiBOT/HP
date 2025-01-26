@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "overrides": {
-    "eslint": "^8",
+    "eslint": "^9",
     "@types/react": "19.0.2",
     "@types/react-dom": "19.0.2"
   },
@@ -24,7 +24,6 @@
     "@next/third-parties": "15.1.2",
     "gray-matter": "^4.0.3",
     "next": "15.1.2",
-    "prettier": "^3.3.3",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-markdown": "^9.0.1",
@@ -37,12 +36,15 @@
     "tocbot": "^4.32.2"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.2.5",
     "@types/node": "^22",
     "@types/react": "19.0.2",
     "@types/react-dom": "19.0.2",
-    "eslint": "^8",
+    "eslint": "^9",
     "eslint-config-next": "15.1.6",
+    "eslint-config-prettier": "^10.0.1",
     "postcss": "^8",
+    "prettier": "^3.3.3",
     "tailwindcss": "^3.4.10",
     "typescript": "^5"
   }
