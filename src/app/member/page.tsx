@@ -24,7 +24,7 @@ const ContactsPage: NextPage = () => {
                 id="members"
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 p-20 justify-items-center items-center mx-auto max-w-7xl"
             >
-                <BioCard avatar="https://github.com/aki2009.png" github="aki2009" name="aki._.yama" role="Owner" text="gakuseiBOTの設計と全体統括を担当しています。" twitter="JJ5RVW_2022" />
+                <BioCard avatar="https://github.com/akiy2009.png" github="akiy2009" name="aki._.yama" role="Owner" text="gakuseiBOTの設計と全体統括を担当しています。" twitter="JJ5RVW_2022" />
                 <BioCard avatar="https://github.com/Yori072.png" github="Yori072" name="y_yori07" role="Engineer" text="HPの作成頑張ってもらっています。" twitter="Yori07_Editor" />
                 <BioCard avatar="https://github.com/takoyakidath.png" github="takoyakidath" name="takoyaki_death" role="Engineer" text="クラウドサーバーの管理等をしていただいています。" twitter="Takoyaki_death" />
                 <BioCard avatar="https://github.com/maikuradentetu.png" github="maikuradentetu" name="maikuradentetu" role="Adviser" text="今まで培ってきた経験を共有いただいています。" twitter="nanka365" />
