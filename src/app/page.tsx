@@ -27,7 +27,7 @@ export default function Home() {
       </section>
       <section className='w-full min-h-[370px] flex flex-col items-center space-y-5 p-5 justify-center'>
         <h1 className='text-2xl font-semibold'>最新のお知らせ</h1>
-        <PostList posts={posts} dirname='announce' className='lg:w-2/5 w-4/5 mx-auto h-[90px] justify-center' />
+        <PostList posts={posts} dirname='announce' className='lg:w-2/5 w-4/5 mx-auto min-h-[90px] justify-center' />
       </section>
       <section id="join" className="flex space-y-5 items-center min-w-full lg:p-20 p-10 flex-col bg-gray-100">
         <h3 className="text-2xl font-semibold">
