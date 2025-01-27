@@ -3,6 +3,8 @@ on:
   pull_request:
     branches:
       - main
+  label:
+    types: [created, deleted]
 jobs:
   checkLabels:
     runs-on: ubuntu-latest
