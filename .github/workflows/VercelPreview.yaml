@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       output1: ${{ steps.labels.outputs.json }}
+    permissions: write-all
     steps:
     - uses: actions/checkout@v4
     - name: Get PR labels
@@ -67,4 +68,4 @@ jobs:
         EOF
         gh pr comment ${{ github.event.number }} --body-file comment.md
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ github.token }}
