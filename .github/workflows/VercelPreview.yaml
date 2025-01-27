@@ -9,7 +9,7 @@ jobs:
   checkLabels:
     runs-on: ubuntu-latest
     outputs:
-      output1: ${{ steps.labels.outputs.test }}
+      output1: ${{ steps.labels.outputs.json }}
     steps:
     - uses: actions/checkout@v4
     - name: Get PR labels
