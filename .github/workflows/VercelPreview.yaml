@@ -24,7 +24,7 @@ jobs:
         echo "json=$json" >> "$GITHUB_OUTPUT"
   deployment:
     needs: checkLabels
-    if: ${{ !(contains(fromJSON(needs.job1.outputs.output1), 'dependencies') || contains(fromJSON(needs.job1.outputs.output1), 'documentation') || contains(fromJSON(needs.job1.outputs.output1), 'duplicate')) }}
+    if: ${{ !(contains(fromJSON(needs.checkLabels.outputs.output1), 'dependencies') || contains(fromJSON(needs.checkLabels.outputs.output1), 'documentation') || contains(fromJSON(needs.checkLabels.outputs.output1), 'duplicate')) }}
     runs-on: ubuntu-latest
     concurrency: Preview
     environment:
