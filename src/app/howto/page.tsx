@@ -62,7 +62,6 @@ const ContactsPage: NextPage = () => {
                 <CmdCard title="server_ping" isRunning={true} description="指定したIPアドレスにPINGを送信します。" />
                 <CmdCard title="server_time" isRunning={true} description="アプリの簡単な処理速度を確認します。" />
                 <CmdCard title="check_verified_bots" isRunning={true} description="サーバー内の認証されていないBOTを検出します。" />
-                <CmdCard title="server_time" isRunning={true} description="アプリの簡単な処理速度を確認します。" />
                 <CmdCard title="help" isRunning={true} description="ヘルプ先を表示します。" />
                 <CmdCard title="setsticky" isRunning={false} description="固定メッセージを設定します。" />
                 <CmdCard title="removesticky" isRunning={false} description="固定メッセージを解除します。" />
