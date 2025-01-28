@@ -17,13 +17,23 @@ jobs:
       - name: Get Vercel Deploy Log
         run: |
           vercel inspect ${{ github.event.inputs.vercel-deploy-url }} --logs --token=${{secrets.VERCEL_TOKEN}} > deploy-log.txt 2> deploy-log.txt
-        continue-on-error: true     
-      - name: Create Summary File
-        id: create-summary
-        run: |
-          echo "## :rocket: Vercel Deploy Log" > summary.md
-          echo '```' >> summary.md
-          cat deploy-log.txt >> summary.md
-          echo '```' >> summary.md
-      - name: Write a summary
-        uses: ./.github/actions/write-summary
+        continue-on-error: true
+      - name: Insert Deploy Log
+        id: insert-deploy-log
+        run: echo deploy_log=$(cat deploy-log.txt) >> $GITHUB_ENV
+      - uses: actions/github-script@v6
+        if: github.event_name == 'pull_request'
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const output = `## 🚀 Vercel Deploy Log
+            <details><summary>details</summary>
+            \`\`\`
+            ${process.env.deploy_log}
+            \`\`\`
+            </details>
+            *Pushed by: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
+            await core.summary
+              .addHeading('Terraform plan report')
+              .addRaw(output)
+              .write();
