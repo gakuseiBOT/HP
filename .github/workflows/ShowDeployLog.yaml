@@ -24,9 +24,9 @@ jobs:
           echo "## :rocket: Vercel Deploy Log" > summary.md
           echo '```' >> summary.md
           cat deploy-log.txt >> summary.md
-          echo '```' >> summary.md 
+          echo '```' >> summary.md
+          echo "SUMMARY=$(cat summary.md)" >> $GITHUB_ENV
       - name: Write a summary
         uses: ./.github/actions/write-summary
         with:
-          message: |
-            $(cat summary.md)
+          message: ${{ env.SUMMARY }}
