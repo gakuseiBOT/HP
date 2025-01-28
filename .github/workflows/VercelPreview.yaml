@@ -3,7 +3,6 @@ on:
   pull_request:
     branches:
       - main
-  merge_group:
 jobs:
   checkLabels:
     runs-on: ubuntu-latest
