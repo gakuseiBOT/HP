@@ -1,0 +1,24 @@
+name: Show Vercel Deploy Log
+on:
+  workflow_dispatch:
+    inputs:
+      vercel-deploy-url:
+        description: 'Vercel Deploy URL'
+        required: true
+jobs:
+  show-deploy-log:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Link Vercel Project
+        run: vercel link --token=${{secrets.VERCEL_TOKEN}} --project ${{vars.VERCEL_PROJECT}} --yes
+      - name: Get Vercel Deploy Log
+        run: |
+          vercel logs ${{ github.event.inputs.vercel-deploy-url }} >deploy-log.txt
+      - name: Write a summary
+        uses: ./.github/actions/write-summary
+        with:
+          message: |
+            ## :rocket: Vercel Deploy Log
+            ```
+            $(cat deploy-log.txt)
+            ```
