@@ -16,7 +16,7 @@ jobs:
         run: vercel link --token=${{secrets.VERCEL_TOKEN}} --project ${{vars.VERCEL_PROJECT}} --yes
       - name: Get Vercel Deploy Log
         run: |
-          vercel logs ${{ github.event.inputs.vercel-deploy-url }} --token=${{secrets.VERCEL_TOKEN}} >deploy-log.txt
+          vercel inspect ${{ github.event.inputs.vercel-deploy-url }} --logs --token=${{secrets.VERCEL_TOKEN}} >deploy-log.txt
       - name: Write a summary
         uses: ./.github/actions/write-summary
         with:
