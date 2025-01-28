@@ -16,7 +16,7 @@ jobs:
         run: vercel link --token=${{secrets.VERCEL_TOKEN}} --project ${{vars.VERCEL_PROJECT}} --yes
       - name: Get Vercel Deploy Log
         run: |
-          vercel inspect ${{ github.event.inputs.vercel-deploy-url }} --logs --token=${{secrets.VERCEL_TOKEN}} > deploy-log.txt || echo "Failed to fetch logs." > deploy-log.txt
+          vercel inspect ${{ github.event.inputs.vercel-deploy-url }} --logs --token=${{secrets.VERCEL_TOKEN}} > deploy-log.txt 2> deploy-log.txt
         continue-on-error: true     
       - name: Create Summary File
         id: create-summary
@@ -25,9 +25,8 @@ jobs:
           echo '```' >> summary.md
           cat deploy-log.txt >> summary.md
           echo '```' >> summary.md 
-
-          echo summary="## :rocket: Vercel Deploy Log\n\`\`\`\n$(cat deploy-log.txt)\n\`\`\`" >> $GITHUB_ENV
       - name: Write a summary
         uses: ./.github/actions/write-summary
         with:
-          message: ${{ env.summary }}
+          message: |
+            $(cat summary.md)
