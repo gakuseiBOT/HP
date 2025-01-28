@@ -77,6 +77,6 @@ jobs:
         Un error occured while deploying the preview. Please check the logs for more information.
         EOF
         gh pr comment ${{ github.event.number }} --body-file comment.md
-        gh pr comment %{{ github.event.number }} --body-file error.txt
+        gh pr comment ${{ github.event.number }} --body-file error.txt
       env:
         GITHUB_TOKEN: ${{ github.token }}
