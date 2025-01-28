@@ -33,6 +33,5 @@ jobs:
             </details>
             *Pushed by: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
             await core.summary
-              .addHeading('Terraform plan report')
               .addRaw(output)
               .write();
