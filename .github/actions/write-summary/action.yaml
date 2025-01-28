@@ -3,7 +3,7 @@ description: "GitHub ActionsのSummaryを書く"
 inputs:
   message:
     description: "What to write in the summary"
-    required: true
+    required: false
 runs:
   using: "composite"
   steps:
@@ -14,6 +14,15 @@ runs:
       with:
         script: |
           const message = process.env.INPUT_MESSAGE;
+          const fs = require('fs');
+          if (!message) {
+            fs.readFile('summary.md', 'utf8', (err, data) => {
+              if (err) {
+                core.setFailed(err.message);
+              }
+              core.setOutput('summary', data);
+            });
+          }
           core.summary.addRaw(message, true);
           core.summary.write();
           core.setFailed(message);

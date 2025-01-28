@@ -25,9 +25,5 @@ jobs:
           echo '```' >> summary.md
           cat deploy-log.txt >> summary.md
           echo '```' >> summary.md
-          ESCAPED_SUMMARY=$(cat summary.md | sed 's/`/\\`/g' | sed ':a;N;$!ba;s/\n/\\n/g')
-          echo "SUMMARY=$ESCAPED_SUMMARY" >> $GITHUB_ENV
       - name: Write a summary
         uses: ./.github/actions/write-summary
-        with:
-          message: ${{ env.SUMMARY }}
