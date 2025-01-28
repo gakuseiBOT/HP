@@ -18,11 +18,18 @@ jobs:
         run: |
           vercel inspect ${{ github.event.inputs.vercel-deploy-url }} --logs --token=${{secrets.VERCEL_TOKEN}} >deploy-log.txt 2>deploy-log.txt
         continue-on-error: true
-      - name: Write a summary
+      - name: Create Summary File
+        id: create-summary
+        run: |
+          cat  << EOF > summary.md
+          ## :rocket: Vercel Deploy Log
+          ```
+          $(cat deploy-log.txt)
+          ```
+          EOF
+          echo summary=$(cat summary.md) >> $GITHUB_ENV
+      - name:  Write a summary
         uses: ./.github/actions/write-summary
         with:
-          message: |
-            ## :rocket: Vercel Deploy Log
-            ```
-            $(cat deploy-log.txt)
-            ```
+          message: ${{ steps.create-summary.outputs.summary }}
+            
