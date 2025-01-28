@@ -58,8 +58,16 @@ const ContactsPage: NextPage = () => {
                 <CmdCard title="add_quote" isRunning={true} description="名言集に名言を追加します。" />
                 <CmdCard title="delete_quote" isRunning={true} description="名言を削除します。" />
                 <CmdCard title="random_quote" isRunning={true} description="ランダムに名言を表示します。" />
+                <CmdCard title="list_quotes" isRunning={true} description="サーバー内の名言を一覧表示します。" />
                 <CmdCard title="server_ping" isRunning={true} description="指定したIPアドレスにPINGを送信します。" />
                 <CmdCard title="server_time" isRunning={true} description="アプリの簡単な処理速度を確認します。" />
+                <CmdCard title="check_verified_bots" isRunning={true} description="サーバー内の認証されていないBOTを検出します。" />
+                <CmdCard title="server_time" isRunning={true} description="アプリの簡単な処理速度を確認します。" />
+                <CmdCard title="help" isRunning={true} description="ヘルプ先を表示します。" />
+                <CmdCard title="setsticky" isRunning={false} description="固定メッセージを設定します。" />
+                <CmdCard title="removesticky" isRunning={false} description="固定メッセージを解除します。" />
+                <CmdCard title="ticket_create" isRunning={true} description="チケットを作成します。" />
+                <CmdCard title="user_info" isRunning={true} description="ユーザーの作成日、警告回数、ブラックリスト、制限状態を表示します。" />
             </section>
         </main>
     );
