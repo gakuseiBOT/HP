@@ -1,10 +1,13 @@
 name: Vercel Production Deployment
 on:
-  push:
+  pull_request:
     branches:
       - main
+    types: [closed]
+  workflow_dispatch:
 jobs:
     deployment:
+        if: github.event.pull_request.merged == true
         runs-on: ubuntu-latest
         concurrency: Production
         environment:
