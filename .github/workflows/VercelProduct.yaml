@@ -20,5 +20,5 @@ jobs:
           run: vercel deploy --prod --token=${{secrets.VERCEL_TOKEN}} >deployment-url.txt 2>error.txt
         - name: Set release url
           id: get_release_url
-          run: echo release_url=$(cat deployment-url.txt) >> $GITHUB_OUTPUT
+          run: echo release_url="https://gakuseibot.pkopko.jp" >> $GITHUB_OUTPUT
         
