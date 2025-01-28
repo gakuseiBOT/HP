@@ -26,11 +26,9 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const output = `## 🚀 Vercel Deploy Log
-            <details><summary>details</summary>
             \`\`\`
             ${process.env.deploy_log}
             \`\`\`
-            </details>
             *Pushed by: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
             await core.summary
               .addRaw(output)
