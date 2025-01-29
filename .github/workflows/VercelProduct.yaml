@@ -35,3 +35,7 @@ jobs:
           run: |
             deploy_url=$(cat deployment-url.txt) >> $GITHUB_ENV
             echo "Deployment URL: $deploy_url"
+        - name: Show Deploy URL
+          run: |
+            deploy_url=$(cat deployment-url.txt)
+            echo "Deploy URL: $deploy_url"
