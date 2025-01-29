@@ -20,7 +20,7 @@ jobs:
         - name: Link Vercel Project
           run: vercel link --token=${{secrets.VERCEL_TOKEN}} --project ${{vars.VERCEL_PROJECT}} --yes
         - name: Deploy with Vercel
-          run: vercel deploy --prod --token=${{secrets.VERCEL_TOKEN}} >deployment-url.txt 2>error.txt
+          run: vercel deploy --prod -f --token=${{secrets.VERCEL_TOKEN}} >deployment-url.txt 2>error.txt
         - name: Set release url
           id: get_release_url
           run: echo release_url="https://gakuseibot.pkopko.jp" >> $GITHUB_OUTPUT
@@ -28,15 +28,3 @@ jobs:
           run: |
             deploy_url=$(cat deployment-url.txt) >> $GITHUB_ENV
             echo "Deployment URL: $deploy_url"
-        - uses: actions/github-script@v6
-          with:
-            github-token: ${{ secrets.GITHUB_TOKEN }}
-            script: |
-              const output = `## 🚀 Vercel Deploy Result
-              \`\`\`
-              ${process.env.deploy_url}
-              \`\`\`
-              *Pushed by: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
-              await core.summary
-                .addRaw(output)
-                .write();
