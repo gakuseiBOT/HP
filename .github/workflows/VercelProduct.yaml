@@ -24,4 +24,19 @@ jobs:
         - name: Set release url
           id: get_release_url
           run: echo release_url="https://gakuseibot.pkopko.jp" >> $GITHUB_OUTPUT
-        
+        - name: Show Deployment URL
+          run: |
+            deploy_url=$(cat deployment-url.txt) >> $GITHUB_ENV
+            echo "Deployment URL: $deploy_url"
+        - uses: actions/github-script@v6
+          with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            script: |
+              const output = `## 🚀 Vercel Deploy Result
+              \`\`\`
+              ${process.env.deploy_url}
+              \`\`\`
+              *Pushed by: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
+              await core.summary
+                .addRaw(output)
+                .write();
