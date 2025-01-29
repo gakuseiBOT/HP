@@ -40,4 +40,6 @@ jobs:
             deploy_url=$(cat deployment-url.txt)
             echo "Deploy URL: $deploy_url"
         - name: Set Alias
-          run: vercel alias set ${{env.deploy_url}} gakuseibot.pkopko.jp --token=${{secrets.VERCEL_TOKEN}}
+          run: |
+            IFS='/' read -r -a array <<< "${{env.deploy_url}}"
+            vercel alias set ${array[2]} gakuseibot.pkopko.jp --token=${{secrets.VERCEL_TOKEN}}
