@@ -25,6 +25,7 @@ jobs:
           id: get_release_url
           run: echo release_url="https://gakuseibot.pkopko.jp" >> $GITHUB_OUTPUT
         - name: Faild Log
+          if: failure()
           run: |
             if [ -s error.txt ]; then
               cat error.txt
