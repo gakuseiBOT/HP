@@ -21,6 +21,8 @@ jobs:
       - name: Insert Deploy Log
         id: insert-deploy-log
         run: echo deploy_log=$(cat deploy-log.txt) >> $GITHUB_ENV
+      - name: Show Deploy Log
+        run: cat deploy-log.txt
       - uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
