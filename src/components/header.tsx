@@ -34,7 +34,7 @@ const Header = () => {
             <Link href="/" className="mt-6">
                 <Image
                     src={"/img/logo.png"}
-                    alt="UniProject's Logo"
+                    alt="GakuseiBot's Logo"
                     width={352}
                     height={81}
                 />
