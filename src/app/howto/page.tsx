@@ -57,9 +57,17 @@ const ContactsPage: NextPage = () => {
                 <CmdCard title="disable_global_chat" isRunning={true} description="グローバルチャットシステムをオフにする際にグローバルチャットシステムを起動したチャンネルで実行して下さい。" />
                 <CmdCard title="add_quote" isRunning={true} description="名言集に名言を追加します。" />
                 <CmdCard title="delete_quote" isRunning={true} description="名言を削除します。" />
+                <CmdCard title="list_quote" isRunning={true} description="サーバー内の名言を一覧表示します。" />
                 <CmdCard title="random_quote" isRunning={true} description="ランダムに名言を表示します。" />
                 <CmdCard title="server_ping" isRunning={true} description="指定したIPアドレスにPINGを送信します。" />
                 <CmdCard title="server_time" isRunning={true} description="アプリの簡単な処理速度を確認します。" />
+                <CmdCard title="server_info" isRunning={true} description="サーバーの詳細な情報を表示します。" />
+                <CmdCard title="check_verified_bots" isRunning={true} description="サーバー内の認証されていないBOTを検出します。" />
+                <CmdCard title="setsticky" isRunning={false} description="固定メッセージを設定します。" />
+                <CmdCard title="removesticky" isRunning={false} description="固定メッセージを解除します。" />
+                <CmdCard title="rolepanel" isRunning={true} description="最大20個のロールでロール付与パネルを作成します。" />
+                <CmdCard title="ticket_create" isRunning={true} description="チケットを作成します。" />
+                <CmdCard title="user_info" isRunning={true} description="ユーザーの作成日、警告回数、ブラックリスト、制限状態を表示します。(gakuseibotによる独自のもの)。" />
             </section>
         </main>
     );
