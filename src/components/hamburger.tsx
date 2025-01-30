@@ -44,12 +44,12 @@ const Hamburger = ({ links }: { links: { label: string; link: string }[] }) => {
                                         <h1 className="font-bold flex space-x-1 items-center">
                                             <Image
                                                 src={"/img/UniPro_Logo.webp"}
-                                                alt="UniProject's Logo"
+                                                alt="GakuseiBot's Logo"
                                                 width={50}
                                                 height={50}
                                             />
                                             <div>
-                                                UniProject
+                                                GakuseiBot
                                             </div>
                                         </h1>
                                     </div>
