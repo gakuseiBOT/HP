@@ -42,12 +42,12 @@ const Hamburger = ({ links }: { links: { label: string; link: string }[] }) => {
                                 <div className="mr-auto text-3xl font-bold leading-none">
                                     <div className="textShadow_wt text-white text-[2.2rem] font-bold text-nowrap max-[1000px]:text-[1.4rem] ">
                                         <h1 className="font-bold flex space-x-1 items-center">
-                                            <Image
+                                            {/*<Image
                                                 src={"/img/UniPro_Logo.webp"}
                                                 alt="GakuseiBot's Logo"
                                                 width={50}
                                                 height={50}
-                                            />
+                                            />*/}
                                             <div>
                                                 GakuseiBot
                                             </div>
