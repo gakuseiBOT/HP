@@ -22,7 +22,7 @@ const ContactsPage: NextPage = () => {
             </section>
             <section
                 id="commands"
-                className="lg:w-2/5 w-4/5 flex flex-col mx-auto space-y-5 p-5"
+                className="lg:w-2/5 w-full flex flex-col mx-auto space-y-5 p-5"
             >
                 <CmdCard title="setreminder" isRunning={false} description="指定した日付のリマインダーを設定します。" args={[
                     {
@@ -36,7 +36,6 @@ const ContactsPage: NextPage = () => {
                     {
                         name: "days_before",
                         description: "リマインダーの何日前に通知するかです。"
-
                     }
                 ]} />
                 <CmdCard title="showreminders" isRunning={false} description="自分のリマインダーを表示します。" />

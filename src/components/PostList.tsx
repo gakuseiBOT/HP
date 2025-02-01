@@ -14,7 +14,7 @@ type PostCardProps = {
 const PostCard = ({ dirname, slug, title, date, description }: PostCardProps) => {
     return (
         <div className="post-card text-black w-full" key={slug}>
-            <div className='flex content-end flex-row justify-between mb-2'>
+            <div className='flex content-end flex-col xl:flex-row justify-between mb-2'>
                 <h2 className='text-xl'>{title}</h2><small className='content-end'>{date}</small>
             </div>
             <p className='text-sm mb-2'>{description}</p>
