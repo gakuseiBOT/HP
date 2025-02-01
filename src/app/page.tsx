@@ -25,7 +25,7 @@ export default function Home() {
           招待する
         </Button>
       </section>
-      <section className='w-full min-h-[370px] flex flex-col items-center space-y-5 p-5 justify-center'>
+      <section className='w-full min-h-[370px] flex flex-col items-center space-y-5 xl:p-5 p-3 justify-center'>
         <h1 className='text-2xl font-semibold'>最新のお知らせ</h1>
         <PostList posts={posts} dirname='announce' className='lg:w-2/5 w-4/5 mx-auto min-h-[90px] justify-center' />
       </section>

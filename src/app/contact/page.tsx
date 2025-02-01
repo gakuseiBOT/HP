@@ -12,7 +12,7 @@ const ContactsPage: NextPage = () => {
     <main className="flex min-h-screen flex-col items-center bg-white text-black space-y-0">
       <section
         id="contact"
-        className="flex flex-col items-center justify-center flex-1 w-full space-y-8"
+        className="flex flex-col items-center justify-center flex-1 w-full space-y-8 px-3"
       >
         <h1 className="text-4xl font-bold">お問い合わせ先</h1>
         <p className="text-lg">
@@ -22,7 +22,7 @@ const ContactsPage: NextPage = () => {
         </p>
         <div
           id="discord"
-          className="flex flex-col items-center justify-center space-y-4 text-center"
+          className="flex flex-col items-center justify-center space-y-4"
         >
           <h2 className="text-3xl">
             Discordサポートサーバー
