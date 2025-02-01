@@ -1,5 +1,5 @@
 import Link from 'next/link';
-
+import escapeHtml from 'escape-html';
 import { Post } from '@/lib/posts';
 import { Button } from './button';
 
@@ -18,7 +18,7 @@ const PostCard = ({ dirname, slug, title, date, description }: PostCardProps) =>
                 <h2 className='text-xl'>{title}</h2><small className='content-end'>{date}</small>
             </div>
             <p className='text-sm mb-2'>{description}</p>
-            <Link href={`/${dirname}/${slug}`}>続きを読む</Link>
+            <Link href={`/${escapeHtml(dirname)}/${escapeHtml(slug)}`}>続きを読む</Link>
         </div>
     );
 };
