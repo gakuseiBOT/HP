@@ -1,6 +1,6 @@
-import { FlatCompat } from '@eslint/eslintrc';
-import { fixupConfigRules } from '@eslint/compat';
-import prettier from 'eslint-config-prettier';
+import { FlatCompat } from "@eslint/eslintrc";
+import { fixupConfigRules } from "@eslint/compat";
+import prettier from "eslint-config-prettier";
 
 const flatCompat = new FlatCompat();
 
@@ -9,8 +9,8 @@ const flatCompat = new FlatCompat();
  */
 const config = [
   ...fixupConfigRules(
-    flatCompat.extends('next/core-web-vitals'),
-    flatCompat.extends('next/typescript'),
+    flatCompat.extends("next/core-web-vitals"),
+    flatCompat.extends("next/typescript")
   ),
   prettier,
 ];

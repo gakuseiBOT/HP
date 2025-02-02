@@ -3,9 +3,7 @@ import { Button } from "@/components/button";
 import React from "react";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-
-};
+export const metadata: Metadata = {};
 
 const ContactsPage: NextPage = () => {
   return (
@@ -20,20 +18,14 @@ const ContactsPage: NextPage = () => {
           <br />
           どうぞお気軽にご連絡・お問い合わせください。
         </p>
-        <div
-          id="discord"
-          className="flex flex-col items-center justify-center space-y-4"
-        >
-          <h2 className="text-3xl">
-            Discordサポートサーバー
-          </h2>
+        <div id="discord" className="flex flex-col items-center justify-center space-y-4">
+          <h2 className="text-3xl">Discordサポートサーバー</h2>
           <p className="text-lg">
-            Discordサーバーでは、お問い合わせやご質問に対応しております。<br />
+            Discordサーバーでは、お問い合わせやご質問に対応しております。
+            <br />
             雑談チャンネルもありますので、お気軽にご参加ください。
           </p>
-          <Button href="/discord">
-            Discordサーバーに参加
-          </Button>
+          <Button href="/discord">Discordサーバーに参加</Button>
         </div>
       </section>
     </main>

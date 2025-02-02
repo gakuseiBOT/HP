@@ -1,0 +1,17 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "eslint.format.enable": false,
+  // cmd+sを押すと同時にformatterを適用
+  "editor.formatOnSave": true,
+  // prettierをデフォルトのformatterとして使用
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.packageManager": "npm",
+  // デフォルトのインデント幅がスペース2個分になる
+  "editor.tabSize": 2,
+  // phpではintelephenseをformatterとして使用
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  }
+}
