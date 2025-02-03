@@ -79,9 +79,12 @@ const ContactsPage: NextPage = () => {
           text="サーバーの管理をメインで活動していただいています。"
         />
         <BioCard
-          name="1_ichg"
+          avatar="https://github.com/i03-Dinar.png"
+          name="Dinar"
           role="Creator"
-          text="gakuseiBOTのアイコンを作成していただいています。"
+          text="gakuseiBOTのアイコンやホームページを作ります。"
+          github="i03-Dinar"
+          twitter="i03_Dinar"
         />
         <BioCard
           name="kento_kato."
