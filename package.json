@@ -34,7 +34,7 @@
     "remark-slug": "^7.0.1",
     "remark-toc": "^9.0.0",
     "swiper": "^11.2.2",
-    "tocbot": "^4.33.0"
+    "tocbot": "^4.35.0"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.6",
