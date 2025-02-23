@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown";
 
 export const metadata: Metadata = {
   title: "スポンサー",
-  description: "当プロジェクトを支援してくださるスポンサーのご紹介",
+  description: "当プロジェクトを支援してくださるスポンサーのご紹介です。",
 };
 
 const sponsorDescription = `
