@@ -28,6 +28,10 @@ const Header = () => {
       label: "お問い合わせ",
       link: "/contact",
     },
+    {
+      label: "スポンサー",
+      link: "/sponsor",
+    },
   ];
   return (
     <header className="flex flex-col justify-center items-center bg-[url('/img/header.webp')] bg-center bg-cover text-white w-full text-black">
