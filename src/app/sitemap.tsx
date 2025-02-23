@@ -28,5 +28,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://gakuseibot.pkopko.jp/tos",
       priority: 1,
     },
+    {
+      url: "https://gakuseibot.pkopko.jp/sponsor",
+      priority: 1,
+    },
   ];
 }
