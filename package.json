@@ -37,7 +37,7 @@
     "tocbot": "^4.35.0"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.2.6",
+    "@eslint/compat": "^1.2.7",
     "@types/escape-html": "^1.0.4",
     "@types/node": "^22",
     "@types/react": "19.0.2",
