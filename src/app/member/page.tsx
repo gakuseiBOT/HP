@@ -91,6 +91,22 @@ const ContactsPage: NextPage = () => {
           role="Programmer"
           text="皆様が使いやすいHPを作れるように頑張ります。"
         />
+        <BioCard
+          avatar="https://github.com/Puton1221.png"
+          name="ぷとん(Puton)"
+          role="Programmer"
+          text="培ってきた技術を元に発展に力を注げるよう頑張ります。"
+          github="PUton1221"
+          twitter="PutonFPS"
+        />
+        <BioCard
+          avatar="https://github.com/nemu-a1021.png"
+          name="ねむa"
+          role="Programmer"
+          text="頑張ります。"
+          github="nemu-a1021"
+          twitter="nemu_adatoomou"
+        />
       </section>
     </main>
   );
