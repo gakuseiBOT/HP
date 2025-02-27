@@ -6,7 +6,7 @@ import PostList from "@/components/PostList";
 export const metadata: Metadata = {
   title: "gakuseiBotコミュニティ - 学生のためのDiscord Bot",
   description:
-    "gakuseiBotは学生や開発者の支援を提供します。時間管理、クイズ機能、モチベーション向上機能などを搭載しております。",
+    "gakuseiBotは学生や開発者の支援を提供します。時間管理、クイズ機能、グローバルチャット機能などを搭載しております。",
 };
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
         <p className="text-center">
           gakusei BOTは学生や開発者の支援を提供します。
           <br />
-          時間管理、クイズ機能、モチベーション向上機能などを搭載しております。
+          時間管理、クイズ機能、グローバルチャット機能などを搭載しております。
         </p>
         <Button href="/invite" className="mt-5">
           招待する
