@@ -24,6 +24,16 @@ const ContactsPage: NextPage = () => {
       >
         {/* group-1 */}
         <CmdCard
+          title="createembed"
+          isRunning={true}
+          description="任意の埋め込みメッセージを作成できます。"
+        />
+        <CmdCard
+          title="first_message_link"
+          isRunning={true}
+          description="指定したチャンネルの最初のメッセージにジャンプできます。"
+        />
+        <CmdCard
           title="studystart"
           isRunning={true}
           description="勉強を開始します。"
