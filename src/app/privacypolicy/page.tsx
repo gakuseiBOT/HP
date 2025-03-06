@@ -68,7 +68,7 @@ const markdownString = `
 本サービスは, 以下の運営者または団体によって管理・運営されています。  
 **運営団体名** : gakuseiBOT コミュニティ  
 **代表者** : akiy2009  
-**お問い合わせ** : (代表者メールアドレス)[akiy2009_dev@outlook.jp]  
+**お問い合わせ** : (代表者メールアドレス)akiy2009_dev@outlook.jp  
 **公式サイト** : [ここから](https://gakuseibot.pkopko.jp)  
 **公式Discordサーバー** : [ここから](https://discord.gg/xaSYvUbAj5)  
 
