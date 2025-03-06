@@ -29,6 +29,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: "https://gakuseibot.pkopko.jp/privacypolicy",
+      priority: 1,
+    },
+    {
       url: "https://gakuseibot.pkopko.jp/sponsor",
       priority: 1,
     },
