@@ -21,6 +21,10 @@ const Header = () => {
       link: "/tos",
     },
     {
+      label: "プライバシーポリシー",
+      link: "/privacypolicy",
+    },
+    {
       label: "開発者紹介",
       link: "/member",
     },
