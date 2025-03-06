@@ -65,14 +65,14 @@ const markdownString = `
 
 ## 第13条 (運営団体情報)
 
-本サービスは,以下の運営者または団体によって管理・運営されています。
+本サービスは, 以下の運営者または団体によって管理・運営されています。
 **運営団体名** : gakuseiBOT コミュニティ
 **代表者** : akiy2009
 **お問い合わせ** : (代表者メールアドレス)[akiy2009_dev@outlook.jp]
-**公式サイト** : (ここから)[https://gakuseibot.pkopko.jp]
-**公式Discordサーバー** : (ここから)[https://discord.gg/xaSYvUbAj5]
+**公式サイト** : [ここから](https://gakuseibot.pkopko.jp)
+**公式Discordサーバー** : [ここから](https://discord.gg/xaSYvUbAj5)
 
-本ポリシーに関するお問い合わせは,上記の連絡先までお願いいたします。  
+本ポリシーに関するお問い合わせは, 上記の連絡先までお願いいたします。  
 
 ## 附則
 
