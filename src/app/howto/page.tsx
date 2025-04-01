@@ -26,7 +26,25 @@ const ContactsPage: NextPage = () => {
         <CmdCard
           title="createembed"
           isRunning={true}
-          description="任意の埋め込みメッセージを作成できます。"
+          description="カスタム埋め込みを作成します。"
+          args={[
+            {
+              name: "タイトル",
+              description: "埋め込みのタイトルを入力します。",
+            },
+            {
+              name: "説明",
+              description: "埋め込みに記載したいメッセージを入力します。",
+            },
+            {
+              name: "カラー(オプション)",
+              description: "埋め込みの色をカラーコードで指定できます。",
+            },
+            {
+              name: "画像URL(オプション)",
+              description: "指定したURLの画像を添付できます。",
+            },
+          ]}
         />
         <CmdCard
           title="first_message_link"
@@ -83,6 +101,11 @@ const ContactsPage: NextPage = () => {
           title="ranking"
           isRunning={true}
           description="サーバーごとにクイズに正解した回数をランキング形式で表示します。（回数はサーバーごとにカウントされます。）"
+        />
+        <CmdCard
+          title="globalranking"
+          isRunning={true}
+          description="全サーバーでクイズに正解した回数をランキング形式で表示します。"
         />
         <CmdCard
           title="set_global_chat"
@@ -146,9 +169,73 @@ const ContactsPage: NextPage = () => {
           description="チケットを作成します。"
         />
         <CmdCard
+          title="serverguide"
+          isRunning={true}
+          description="ルールのテンプレを送信します。"
+        />
+        <CmdCard
           title="user_info"
           isRunning={true}
           description="ユーザーの作成日、警告回数、ブラックリスト、制限状態を表示します。(gakuseibotによる独自のもの)。"
+        />
+        <CmdCard
+          title="weather"
+          isRunning={true}
+          description="地域を選択して天気を取得します。"
+        />
+        <CmdCard
+          title="user_ban"
+          isRunning={true}
+          description="指定したユーザーをサーバーからBANします。"
+        />
+        <CmdCard
+          title="user_unban"
+          isRunning={true}
+          description="指定したユーザーのサーバーからのBANを解除します。"
+        />
+        <CmdCard
+          title="channel_lock"
+          isRunning={true}
+          description="荒らしにあった場合にチャンネルをロックします。”
+        />
+        <CmdCard
+          title="poll"
+          isRunning={true}
+          description="アンケートを作成します。"
+          args={[
+            {
+              name: "title",
+              description: "タイトルを入力します。",
+            },
+            {
+              name: "question",
+              description: "質問を入力します。",
+            },
+            {
+              name: "answer1",
+              description: "選択肢を入力します。",
+            },
+            {
+              name: "answer2",
+              description: "選択肢を入力します。",
+            },
+            {
+              name: "emoji1",
+              description: "選択肢の絵文字を入力します。",
+            },
+            {
+              name: "emoji2",
+              description: "選択肢の絵文字を入力します。",
+            },
+            {
+              name: "onevote(オプション)",
+              description: "1つの選択肢にしか投票できないようにします。",
+            },
+            {
+              name: "color(オプション)",
+              description: "埋め込みの色を指定します。",
+            },
+          ]}
         />
         <h1 className="text-2xl font-semibold">停止中のコマンド</h1>
         {/* ここからisRunnning={false} */}
@@ -188,12 +275,6 @@ const ContactsPage: NextPage = () => {
           description="自分のリマインダー一覧を表示します。"
         />
         {/* group-2 ここから */}
-        <CmdCard
-          title="setreaction"
-          isRunning={false}
-          description="特定の言葉に特定の言葉で反応します。"
-        />
-        {/* group-3 ここから */}
         <CmdCard
           title="setsticky"
           isRunning={false}
