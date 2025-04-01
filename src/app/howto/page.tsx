@@ -196,7 +196,7 @@ const ContactsPage: NextPage = () => {
         <CmdCard
           title="channel_lock"
           isRunning={true}
-          description="荒らしにあった場合にチャンネルをロックします。”
+          description="荒らしにあった場合にチャンネルをロックします。"
         />
         <CmdCard
           title="poll"
