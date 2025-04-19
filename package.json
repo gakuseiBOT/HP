@@ -24,7 +24,7 @@
     "@next/third-parties": "15.3.0",
     "escape-html": "^1.0.3",
     "gray-matter": "^4.0.3",
-    "next": "15.2.3",
+    "next": "15.3.1",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-markdown": "^9.0.3",
