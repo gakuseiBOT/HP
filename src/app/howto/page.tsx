@@ -31,18 +31,22 @@ const ContactsPage: NextPage = () => {
             {
               name: "タイトル",
               description: "埋め込みのタイトルを入力します。",
+              defaultValue: "タイトル"
             },
             {
               name: "説明",
               description: "埋め込みに記載したいメッセージを入力します。",
+              defaultValue: "説明"
             },
             {
-              name: "カラー(オプション)",
+              name: "カラー",
               description: "埋め込みの色をカラーコードで指定できます。",
+              required: false,
             },
             {
-              name: "画像URL(オプション)",
+              name: "画像URL",
               description: "指定したURLの画像を添付できます。",
+              required: false,
             },
           ]}
         />
@@ -228,12 +232,14 @@ const ContactsPage: NextPage = () => {
               description: "選択肢の絵文字を入力します。",
             },
             {
-              name: "onevote(オプション)",
+              name: "onevote",
               description: "1つの選択肢にしか投票できないようにします。",
+              required: false,
             },
             {
-              name: "color(オプション)",
+              name: "color",
               description: "埋め込みの色を指定します。",
+              required: false,
             },
           ]}
         />

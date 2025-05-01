@@ -8,7 +8,10 @@ type CmdCardProps = {
 };
 type arg = {
   name: string;
+  // type: string;
+  defaultValue?: string;
   description: string;
+  required?: boolean;
 };
 
 const runningStyle = "bg-white";
@@ -17,6 +20,7 @@ const disableStyle = "bg-gray-200";
 export default function CmdCard({ title, description, isRunning, args }: CmdCardProps) {
   const argElements = new Array<JSX.Element>();
   args?.forEach((arg) => {
+    const isRequired = arg.required ?? true;
     argElements.push(
       <div
         className="flex items-center justify-between"
@@ -24,8 +28,14 @@ export default function CmdCard({ title, description, isRunning, args }: CmdCard
       >
         <div className="flex items-center">
           <div className="">
-            <h2 className="text-md font-semibold text-gray-800">{arg.name}</h2>
+            <h2 className="text-md font-semibold text-gray-800">
+              {arg.name}
+              {isRequired ? "" : "(オプション)"}
+            </h2>
             <p className="text-sm text-gray-500">{arg.description}</p>
+            {arg.defaultValue && (
+              <p className="text-xs text-gray-500">デフォルトの値: {arg.defaultValue}</p>
+            )}
           </div>
         </div>
       </div>
