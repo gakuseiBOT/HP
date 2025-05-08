@@ -33,6 +33,10 @@ const Header = () => {
       link: "/contact",
     },
     {
+      label: "更新情報",
+      link: "/updates",
+    },
+    {
       label: "スポンサー",
       link: "/sponsor",
     },

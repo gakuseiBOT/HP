@@ -1,0 +1,98 @@
+[
+  {
+    "title": "その他の更新",
+    "date": "2025-05-05",
+    "type": "other",
+    "slug": "other"
+  },
+  {
+    "title": "コマンドの修正",
+    "date": "2025-04-22",
+    "type": "improvement",
+    "slug": "improve-2025-04-22"
+  },
+  {
+    "title": "bumpの追加",
+    "date": "2025-04-13",
+    "type": "feature",
+    "slug": "bump-2025-04-13"
+  },
+  {
+    "title": "グローバルチャットの機能追加と修正",
+    "date": "2025-04-09",
+    "type": "feature",
+    "slug": "globalchat-2025-04-09"
+  },
+  {
+    "title": "コマンドの修正",
+    "date": "2025-04-06",
+    "type": "bugfix",
+    "slug": "fix-2025-04-06"
+  },
+  {
+    "title": "コマンドの追加",
+    "date": "2025-03-31",
+    "type": "improvement",
+    "slug": "improve-2025-03-31"
+  },
+  {
+    "title": "コマンド追加",
+    "date": "2025-03-12",
+    "type": "feature",
+    "slug": "command-2025-03-12"
+  },
+  {
+    "title": "コマンド修正",
+    "date": "2025-03-10",
+    "type": "improvement",
+    "slug": "improve-2025-03-10"
+  },
+  {
+    "title": "コマンド追加",
+    "date": "2025-03-02",
+    "type": "feature",
+    "slug": "command-2025-03-02"
+  },
+  {
+    "title": "コマンド追加",
+    "date": "2025-02-28",
+    "type": "feature",
+    "slug": "command-2025-02-28"
+  },
+  {
+    "title": "ロールパネルの更新",
+    "date": "2025-02-25",
+    "type": "bugfix",
+    "slug": "bugfix-2025-02-25"
+  },
+  {
+    "title": "ロールパネルの修正など",
+    "date": "2025-02-21",
+    "type": "bugfix",
+    "slug": "bugfix-2025-02-21"
+  },
+  {
+    "title": "各種問題の修正など",
+    "date": "2025-02-20",
+    "type": "bugfix",
+    "slug": "bugfix-2025-02-20"
+  },
+  {
+    "title": "各種機能の変更と追加",
+    "date": "2025-02-18",
+    "type": "feature",
+    "slug": "feature-2025-02-18"
+  },
+  {
+    "title": "/ticket_createコマンドの更新",
+    "date": "2025-01-08",
+    "type": "improvement",
+    "slug": "ticket-create-2025-01-08"
+  },
+  {
+    "title": "コマンド修正と追加",
+    "date": "2024-12-09",
+    "type": "feature",
+    "slug": "command-2024-12-09"
+  }
+]
