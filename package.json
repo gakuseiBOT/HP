@@ -21,7 +21,7 @@
     "@mui/joy": "^5.0.0-beta.52",
     "@mui/material": "^6.4.4",
     "@mui/material-nextjs": "^7.0.2",
-    "@next/third-parties": "15.3.0",
+    "@next/third-parties": "15.3.1",
     "escape-html": "^1.0.3",
     "gray-matter": "^4.0.3",
     "next": "15.2.3",
