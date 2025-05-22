@@ -31,7 +31,7 @@
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.1",
     "remark-html": "^16.0.1",
-    "remark-slug": "^7.0.1",
+    "remark-slug": "^8.0.0",
     "remark-toc": "^9.0.0",
     "swiper": "^11.2.6",
     "tocbot": "^4.35.0"
