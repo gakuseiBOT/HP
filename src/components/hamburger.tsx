@@ -1,8 +1,8 @@
-"use client";
-import { useState } from "react";
-import Link from "next/link";
-import NavLinks from "@/components/NavLinks";
-import Image from "next/image";
+'use client';
+import { useState } from 'react';
+import Link from 'next/link';
+import NavLinks from '@/components/NavLinks';
+import Image from 'next/image';
 
 /**
  * Hamburger component.
@@ -27,7 +27,7 @@ const Hamburger = ({ links }: { links: { label: string; link: string }[] }) => {
         </svg>
       </button>
       <div
-        className={`${isMenuOpen ? "flex" : "hidden"} absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6`}
+        className={`${isMenuOpen ? 'flex' : 'hidden'} absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6`}
       ></div>
       {isMenuOpen && (
         <div className="navbar-menu relative z-50">

@@ -1,6 +1,6 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 
 export type Post = {
   slug: string;
@@ -11,16 +11,16 @@ export type Post = {
 };
 
 export function getAllPosts(dirpath: string): Post[] {
-  const postsDirectory = path.join(process.cwd(), "posts", dirpath);
+  const postsDirectory = path.join(process.cwd(), 'posts', dirpath);
   const filenames = fs.readdirSync(postsDirectory);
 
   return filenames.map((filename) => {
     const filePath = path.join(postsDirectory, filename);
-    const fileContents = fs.readFileSync(filePath, "utf8");
+    const fileContents = fs.readFileSync(filePath, 'utf8');
     const { data, content } = matter(fileContents);
 
     return {
-      slug: filename.replace(".md", ""),
+      slug: filename.replace('.md', ''),
       title: data.title,
       date: data.date,
       description: data.description,
@@ -30,16 +30,16 @@ export function getAllPosts(dirpath: string): Post[] {
 }
 
 export function getRecentPosts(dirpath: string, limit: number = 5): Post[] {
-  const postsDirectory = path.join(process.cwd(), "posts", dirpath);
+  const postsDirectory = path.join(process.cwd(), 'posts', dirpath);
   const filenames = fs.readdirSync(postsDirectory);
 
   const posts = filenames.map((filename) => {
     const filePath = path.join(postsDirectory, filename);
-    const fileContents = fs.readFileSync(filePath, "utf8");
+    const fileContents = fs.readFileSync(filePath, 'utf8');
     const { data, content } = matter(fileContents);
 
     return {
-      slug: filename.replace(".md", ""),
+      slug: filename.replace('.md', ''),
       title: data.title,
       date: data.date,
       description: data.description,
@@ -54,9 +54,9 @@ export function getRecentPosts(dirpath: string, limit: number = 5): Post[] {
 }
 
 export function getPostBySlug(dirpath: string, slug: string): Post {
-  const postsDirectory = path.join(process.cwd(), "posts", dirpath);
+  const postsDirectory = path.join(process.cwd(), 'posts', dirpath);
   const filePath = path.join(postsDirectory, `${slug}.md`);
-  const fileContents = fs.readFileSync(filePath, "utf8");
+  const fileContents = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(fileContents);
 
   return {

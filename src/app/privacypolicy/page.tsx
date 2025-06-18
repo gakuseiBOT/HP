@@ -1,10 +1,10 @@
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import { Metadata } from "next";
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "プライバシーポリシー - gakuseiBotコミュニティ",
-  description: "gakuseiBotコミュニティのプライバシーポリシーです。",
+  title: 'プライバシーポリシー - gakuseiBotコミュニティ',
+  description: 'gakuseiBotコミュニティのプライバシーポリシーです。',
 };
 
 const markdownString = `

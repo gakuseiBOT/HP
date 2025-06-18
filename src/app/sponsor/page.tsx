@@ -1,11 +1,11 @@
-import { NextPage } from "next";
-import React from "react";
-import { Metadata } from "next";
-import ReactMarkdown from "react-markdown";
+import { NextPage } from 'next';
+import React from 'react';
+import { Metadata } from 'next';
+import ReactMarkdown from 'react-markdown';
 
 export const metadata: Metadata = {
-  title: "スポンサー",
-  description: "当プロジェクトを支援してくださるスポンサーのご紹介です。",
+  title: 'スポンサー',
+  description: '当プロジェクトを支援してくださるスポンサーのご紹介です。',
 };
 
 const sponsorDescription = `

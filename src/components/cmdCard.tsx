@@ -1,4 +1,4 @@
-import { JSX } from "react";
+import { JSX } from 'react';
 
 type CmdCardProps = {
   title: string;
@@ -14,8 +14,8 @@ type arg = {
   required?: boolean;
 };
 
-const runningStyle = "bg-white";
-const disableStyle = "bg-gray-200";
+const runningStyle = 'bg-white';
+const disableStyle = 'bg-gray-200';
 
 export default function CmdCard({ title, description, isRunning, args }: CmdCardProps) {
   const argElements = new Array<JSX.Element>();
@@ -30,7 +30,7 @@ export default function CmdCard({ title, description, isRunning, args }: CmdCard
           <div className="">
             <h2 className="text-md font-semibold text-gray-800">
               {arg.name}
-              {isRequired ? "" : "(オプション)"}
+              {isRequired ? '' : '(オプション)'}
             </h2>
             <p className="text-sm text-gray-500">{arg.description}</p>
             {arg.defaultValue && (
@@ -50,7 +50,7 @@ export default function CmdCard({ title, description, isRunning, args }: CmdCard
           <div className="">
             <h2 className="text-xl font-semibold text-gray-800">
               /{title}
-              {isRunning ? "" : "(停止中)"}
+              {isRunning ? '' : '(停止中)'}
             </h2>
             <p className="text-sm text-gray-500">{description}</p>
             {argElements}

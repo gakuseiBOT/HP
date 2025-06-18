@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       vercel-deploy-url:
-        description: "Vercel Deploy URL"
+        description: 'Vercel Deploy URL'
         required: true
 jobs:
   show-deploy-log:

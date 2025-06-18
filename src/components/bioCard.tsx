@@ -1,15 +1,15 @@
-"use client";
-import * as React from "react";
-import Avatar from "@mui/joy/Avatar";
-import Chip from "@mui/joy/Chip";
-import Box from "@mui/joy/Box";
-import Card from "@mui/joy/Card";
-import CardContent from "@mui/joy/CardContent";
-import IconButton from "@mui/joy/IconButton";
-import Typography from "@mui/joy/Typography";
-import LanguageIcon from "@mui/icons-material/Language";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import GitHubIcon from "@mui/icons-material/GitHub";
+'use client';
+import * as React from 'react';
+import Avatar from '@mui/joy/Avatar';
+import Chip from '@mui/joy/Chip';
+import Box from '@mui/joy/Box';
+import Card from '@mui/joy/Card';
+import CardContent from '@mui/joy/CardContent';
+import IconButton from '@mui/joy/IconButton';
+import Typography from '@mui/joy/Typography';
+import LanguageIcon from '@mui/icons-material/Language';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 export default function BioCard({
   text,
@@ -29,11 +29,11 @@ export default function BioCard({
   role: string;
 }) {
   return (
-    <Card sx={{ width: 320, maxWidth: "100%", boxShadow: "lg" }}>
-      <CardContent sx={{ alignItems: "center", textAlign: "center" }}>
+    <Card sx={{ width: 320, maxWidth: '100%', boxShadow: 'lg' }}>
+      <CardContent sx={{ alignItems: 'center', textAlign: 'center' }}>
         <Avatar
           src={avatar}
-          sx={{ "--Avatar-size": "4rem" }}
+          sx={{ '--Avatar-size': '4rem' }}
         />
         <Chip
           size="sm"
@@ -42,8 +42,8 @@ export default function BioCard({
           sx={{
             mt: -1,
             mb: 1,
-            border: "3px solid",
-            borderColor: "background.surface",
+            border: '3px solid',
+            borderColor: 'background.surface',
           }}
         >
           {role}
@@ -51,16 +51,16 @@ export default function BioCard({
         <Typography level="title-lg">{name}</Typography>
         <Typography
           level="body-sm"
-          sx={{ maxWidth: "24ch" }}
+          sx={{ maxWidth: '24ch' }}
         >
           {text}
         </Typography>
         <Box
           sx={{
-            display: "flex",
+            display: 'flex',
             gap: 2,
             mt: 2,
-            "& > button": { borderRadius: "2rem" },
+            '& > button': { borderRadius: '2rem' },
           }}
           height={32}
         >

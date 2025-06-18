@@ -1,13 +1,13 @@
-"use client";
-import React, { JSX, useEffect, useState } from "react";
-import Image from "next/image";
+'use client';
+import React, { JSX, useEffect, useState } from 'react';
+import Image from 'next/image';
 
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import styles from "./index.module.css";
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import styles from './index.module.css';
 
 type PropsType = {
   images: string[];
@@ -17,21 +17,21 @@ const useIsPc = () => {
   const [isPc, setIsPc] = useState(false);
 
   useEffect(() => {
-    const mediaQueryList = window.matchMedia("(min-width: 1024px)");
+    const mediaQueryList = window.matchMedia('(min-width: 1024px)');
     const listener = () => setIsPc(mediaQueryList.matches);
 
     // 初回に現在の状態を設定
     setIsPc(mediaQueryList.matches);
-    mediaQueryList.addEventListener("change", listener);
+    mediaQueryList.addEventListener('change', listener);
 
-    return () => mediaQueryList.removeEventListener("change", listener);
+    return () => mediaQueryList.removeEventListener('change', listener);
   }, []);
 
   return isPc;
 };
 
 function Mobile({ images }: PropsType): JSX.Element {
-  console.log("mobile");
+  console.log('mobile');
   const slideSettings = {
     0: {
       slidesPerView: 0,
@@ -42,12 +42,12 @@ function Mobile({ images }: PropsType): JSX.Element {
       spaceBetween: 1,
     },
   };
-  const imageStyle = "";
+  const imageStyle = '';
   return (
     <Swiper
       modules={[Navigation, Pagination, Autoplay]}
       breakpoints={slideSettings}
-      slidesPerView={"auto"}
+      slidesPerView={'auto'}
       centeredSlides={true}
       mousewheel={true}
       freeMode={true}
@@ -61,7 +61,7 @@ function Mobile({ images }: PropsType): JSX.Element {
       pagination={{
         clickable: true,
       }}
-      className={styles.slideWrapper + "w-full max-w-full"}
+      className={styles.slideWrapper + 'w-full max-w-full'}
     >
       {images.map((src: string, index: number) => (
         <SwiperSlide key={index}>
@@ -80,7 +80,7 @@ function Mobile({ images }: PropsType): JSX.Element {
 }
 
 const PC = ({ images }: PropsType) => {
-  console.log("pc");
+  console.log('pc');
   const slideSettings = {
     0: {
       slidesPerView: 1.4,
@@ -96,7 +96,7 @@ const PC = ({ images }: PropsType) => {
     <Swiper
       modules={[Navigation, Pagination, Autoplay]}
       breakpoints={slideSettings}
-      slidesPerView={"auto"}
+      slidesPerView={'auto'}
       centeredSlides={true}
       mousewheel={true}
       freeMode={true}
@@ -110,7 +110,7 @@ const PC = ({ images }: PropsType) => {
       pagination={{
         clickable: true,
       }}
-      className={styles.slideWrapper + "w-full max-w-full"}
+      className={styles.slideWrapper + 'w-full max-w-full'}
     >
       {images.map((src: string, index: number) => (
         <SwiperSlide key={index}>

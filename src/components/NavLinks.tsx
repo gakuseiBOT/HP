@@ -1,6 +1,6 @@
-"use client";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+'use client';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 type PropsType = {
   links: { label: string; link: string }[];
@@ -30,8 +30,8 @@ const NavLinks = ({ links, propClass, setIsMenuOpen }: PropsType) => {
           className={`w-[fit-content] hover:bg-slate-700 hover:text-primary/60 px-3 py-1 rounded-md text-sm font-medium cursor-pointer text-[1.1rem]
             ${
               currentPath == link.link
-                ? "bg-slate-700 cursor-default shadow-1 text-primary/70 hover:text-primary/60 "
-                : ""
+                ? 'bg-slate-700 cursor-default shadow-1 text-primary/70 hover:text-primary/60 '
+                : ''
             }`}
           key={link.label}
         >

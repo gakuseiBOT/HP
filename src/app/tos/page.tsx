@@ -1,10 +1,10 @@
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import { Metadata } from "next";
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "利用規約 - gakuseiBotコミュニティ",
-  description: "gakuseiBotコミュニティの利用規約です。",
+  title: '利用規約 - gakuseiBotコミュニティ',
+  description: 'gakuseiBotコミュニティの利用規約です。',
 };
 
 const markdownString = `

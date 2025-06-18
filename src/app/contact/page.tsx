@@ -1,7 +1,7 @@
-import { NextPage } from "next";
-import { Button } from "@/components/button";
-import React from "react";
-import { Metadata } from "next";
+import { NextPage } from 'next';
+import { Button } from '@/components/button';
+import React from 'react';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {};
 
@@ -18,7 +18,10 @@ const ContactsPage: NextPage = () => {
           <br />
           どうぞお気軽にご連絡・お問い合わせください。
         </p>
-        <div id="discord" className="flex flex-col items-center justify-center space-y-4">
+        <div
+          id="discord"
+          className="flex flex-col items-center justify-center space-y-4"
+        >
           <h2 className="text-3xl">Discordサポートサーバー</h2>
           <p className="text-lg">
             Discordサーバーでは、お問い合わせやご質問に対応しております。

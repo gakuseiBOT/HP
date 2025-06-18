@@ -1,16 +1,16 @@
-import { Metadata } from "next";
-import { Button } from "@/components/button";
-import { getRecentPosts } from "@/lib/posts";
-import PostList from "@/components/PostList";
+import { Metadata } from 'next';
+import { Button } from '@/components/button';
+import { getRecentPosts } from '@/lib/posts';
+import PostList from '@/components/PostList';
 
 export const metadata: Metadata = {
-  title: "gakuseiBotコミュニティ - 学生のためのDiscord Bot",
+  title: 'gakuseiBotコミュニティ - 学生のためのDiscord Bot',
   description:
-    "gakuseiBotは学生や開発者の支援を提供します。時間管理、クイズ機能、グローバルチャット機能などを搭載しております。",
+    'gakuseiBotは学生や開発者の支援を提供します。時間管理、クイズ機能、グローバルチャット機能などを搭載しております。',
 };
 
 export default function Home() {
-  const posts = getRecentPosts("announce", 4);
+  const posts = getRecentPosts('announce', 4);
   return (
     <main className="flex flex-col items-center w-full min-h-screen space-y-0 text-black bg-white">
       <section className="w-full border flex flex-col items-center p-5 min-h-[370px] bg-white text-black space-y-6 justify-center">
@@ -48,7 +48,7 @@ export default function Home() {
             サポートサーバーでは、Botに関する最新情報を得たり、サポートを受けたりすることができます。
           </p>
           <div className="flex flex-col items-center justify-center space-y-3 lg:flex-row lg:space-x-5 lg:space-y-0">
-            <Button<"Link">
+            <Button<'Link'>
               href="/discord"
               className="w-full lg:w-2/5"
               disabled={false}

@@ -1,60 +1,60 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { format } from "date-fns";
-import { ja } from "date-fns/locale";
+import Link from 'next/link';
+import { format } from 'date-fns';
+import { ja } from 'date-fns/locale';
 
 type Props = {
   title: string;
   date: string;
-  type: "feature" | "bugfix" | "improvement" | "other";
+  type: 'feature' | 'bugfix' | 'improvement' | 'other';
   slug: string;
   isNew: boolean;
 };
 
 const typeLabels: { [key: string]: string } = {
-  feature: "新機能",
-  bugfix: "バグ修正",
-  improvement: "改善",
-  other: "その他",
+  feature: '新機能',
+  bugfix: 'バグ修正',
+  improvement: '改善',
+  other: 'その他',
 };
 
 const typeColors: Record<string, string> = {
-  feature: "bg-green-200 text-green-800",
-  bugfix: "bg-red-200 text-red-800",
-  improvement: "bg-blue-200 text-blue-800",
-  other: "bg-gray-200 text-gray-800",
+  feature: 'bg-green-200 text-green-800',
+  bugfix: 'bg-red-200 text-red-800',
+  improvement: 'bg-blue-200 text-blue-800',
+  other: 'bg-gray-200 text-gray-800',
 };
 
 export default function UpdateTitle({ title, date, type, slug, isNew }: Props) {
   const formattedDate = (rawDate: unknown) => {
     let date: Date;
 
-    if (typeof rawDate === "string" || rawDate instanceof Date) {
+    if (typeof rawDate === 'string' || rawDate instanceof Date) {
       date = new Date(rawDate);
     } else {
-      console.error("Invalid date format:", rawDate);
-      return "不正な日付です";
+      console.error('Invalid date format:', rawDate);
+      return '不正な日付です';
     }
 
     if (isNaN(date.getTime())) {
-      console.error("Invalid date format:", rawDate);
-      return "不正な日付です";
+      console.error('Invalid date format:', rawDate);
+      return '不正な日付です';
     }
 
-    return format(date, "yyyy年MM月dd日", { locale: ja });
+    return format(date, 'yyyy年MM月dd日', { locale: ja });
   };
 
   const formattedType = (type: unknown) => {
-    const validTypes = ["feature", "bugfix", "improvement", "other"];
+    const validTypes = ['feature', 'bugfix', 'improvement', 'other'];
 
     if (!validTypes.includes(type as string)) {
-      console.error("Invalid type:", type);
-      return "";
+      console.error('Invalid type:', type);
+      return '';
     }
 
     return typeLabels[type as string] ?? type;
-  }
+  };
 
   return (
     <div className="border-b py-4">
