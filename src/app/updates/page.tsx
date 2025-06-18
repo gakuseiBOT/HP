@@ -38,7 +38,6 @@ export default async function UpdatesPage() {
         <p className="text-lg">日々新しくなるgakuseiBOTの様子をお伝えします。</p>
       </section>
 
-      <p>ダミーデータです。この状態で公開しないでください。</p>
       <div className="max-w-2xl px-4 mx-auto">
         {updates.map((update: any) => (
           <UpdateTitle
