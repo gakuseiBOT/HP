@@ -61,7 +61,7 @@ function Mobile({ images }: PropsType): JSX.Element {
       pagination={{
         clickable: true,
       }}
-      className={styles.slideWrapper + 'w-full max-w-full'}
+      className={styles.slideWrapper + ' w-full max-w-full'}
     >
       {images.map((src: string, index: number) => (
         <SwiperSlide key={index}>

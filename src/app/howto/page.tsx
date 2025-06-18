@@ -66,7 +66,7 @@ const ContactsPage: NextPage = () => {
           description="勉強を終了します。"
         />
         <CmdCard
-          title="serach"
+          title="search"
           isRunning={true}
           description="ウィキペディアからの引用検索をします。"
         />

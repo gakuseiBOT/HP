@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       title: post.title,
       description: post.description || '詳細はこの記事をご覧ください。',
       type: 'article',
-      url: `https:///announce/${slug}`,
+      url: `https://announce/${slug}`,
     },
   };
 }

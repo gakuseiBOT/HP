@@ -42,7 +42,7 @@ const Header = () => {
     },
   ];
   return (
-    <header className="flex flex-col justify-center items-center bg-[url('/img/header.webp')] bg-center bg-cover text-white w-full text-black">
+    <header className="flex flex-col justify-center items-center bg-[url('/img/header.webp')] bg-center bg-cover w-full">
       <Link
         href="/"
         className="mt-6"
@@ -55,7 +55,7 @@ const Header = () => {
         />
       </Link>
       <nav className="w-full bg-black bg-opacity-50 justify-center hidden lg:flex items-center p-2 text-white font-semibold m-3">
-        <ul className="flex right-4 text-right space-x-5 jusitfy-center">
+        <ul className="flex right-4 text-right space-x-5 justify-center">
           {navItems.map((item) => (
             <li key={item.label}>
               <Link href={item.link}>{item.label}</Link>
