@@ -130,9 +130,9 @@ const markdownString = `
 const Home = () => {
   return (
     <main className="flex min-h-screen w-full flex-col items-center bg-white text-black space-y-0 py-5 px-3">
-      <ReactMarkdown remarkPlugins={[remarkGfm]} className="markdown">
-        {markdownString}
-      </ReactMarkdown>
+      <div className="markdown">
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdownString}</ReactMarkdown>
+      </div>
     </main>
   );
 };
