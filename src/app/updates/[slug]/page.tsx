@@ -6,9 +6,13 @@ import fs from "fs/promises";
 import path from "path";
 import { remark } from "remark";
 import html from "remark-html";
+import Link from "next/link";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
-export default async function UpdateDetailPage({ params }: { params: { slug: string } }) {
-  const update = updates.find((u) => u.slug === params.slug);
+export default async function UpdateDetailPage(props: { params: Promise<{ slug: string }> }) {
+  const { slug } = await props.params;
+
+  const update = updates.find((u) => u.slug === slug);
   if (!update) return notFound();
 
   const mdPath = path.join(process.cwd(), "src/data/updates", `${update.slug}.md`);
@@ -32,7 +36,16 @@ export default async function UpdateDetailPage({ params }: { params: { slug: str
         <h1 className="text-2xl font-bold mb-2">{update.title}</h1>
         <div className="text-sm mb-4">更新日: {formattedDate}</div>
       </section>
-      
+
+      <div className="w-full flex justify-start max-w-2xl mx-auto">
+        <Link
+          href="/updates"
+          className="text-lg mt-6 mb-4 flex items-center text-gray-500 hover:text-gray-700 transition-colors duration-150 font-medium gap-1"
+        >
+          <ArrowBackIcon style={{ fontSize: 20 }} /> 戻る
+        </Link>
+        
+      </div>
       <div
         className="prose prose-sm prose-blue"
         dangerouslySetInnerHTML={{ __html: contentHtml }}

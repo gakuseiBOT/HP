@@ -1,11 +1,5 @@
 [
   {
-    "title": "その他の更新",
-    "date": "2025-05-05",
-    "type": "other",
-    "slug": "other"
-  },
-  {
     "title": "コマンドの修正",
     "date": "2025-04-22",
     "type": "improvement",
