@@ -27,8 +27,8 @@ const SponsorsPage: NextPage = () => {
         className="flex flex-col items-center justify-center flex-1 w-full space-y-6 px-3 text-center"
       >
         <h1 className="text-3xl md:text-4xl font-bold">スポンサー</h1>
-        <div className="w-full max-w-2xl text-left">
-          <ReactMarkdown className="text-base md:text-lg space-y-4">{sponsorDescription}</ReactMarkdown>
+        <div className="w-full max-w-2xl text-left text-base md:text-lg space-y-4">
+          <ReactMarkdown>{sponsorDescription}</ReactMarkdown>
         </div>
       </section>
     </main>

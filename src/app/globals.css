@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -122,5 +120,5 @@ body {
 
 /* Override pygments style background color. */
 .markdown .highlight pre {
-  @apply bg-gray-100 !important;
+  @apply !bg-gray-100;
 }

@@ -50,9 +50,9 @@ ${post.content}
   return (
     <div className="bg-white min-h-screen w-full text-black p-5">
       <article className="min-h-96 p-4 w-full">
-        <ReactMarkdown remarkPlugins={[remarkGfm]} className="markdown mx-auto">
-          {markdownContent}
-        </ReactMarkdown>
+        <div className="markdown mx-auto">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdownContent}</ReactMarkdown>
+        </div>
       </article>
       <h1 className="text-2xl mx-auto lg:w-2/5 w-4/5 text-left mb-5">最近のアナウンス</h1>
       <PostList
