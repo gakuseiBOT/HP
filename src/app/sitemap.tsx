@@ -5,35 +5,35 @@ export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://gakuseibot.pkopko.jp/",
+      url: "https://gakuseibot.com/",
       priority: 1,
     },
     {
-      url: "https://gakuseibot.pkopko.jp/announce",
+      url: "https://gakuseibot.com/announce",
       priority: 1,
     },
     {
-      url: "https://gakuseibot.pkopko.jp/contact",
+      url: "https://gakuseibot.com/contact",
       priority: 1,
     },
     {
-      url: "https://gakuseibot.pkopko.jp/howto",
+      url: "https://gakuseibot.com/howto",
       priority: 1,
     },
     {
-      url: "https://gakuseibot.pkopko.jp/member",
+      url: "https://gakuseibot.com/member",
       priority: 1,
     },
     {
-      url: "https://gakuseibot.pkopko.jp/tos",
+      url: "https://gakuseibot.com/tos",
       priority: 1,
     },
     {
-      url: "https://gakuseibot.pkopko.jp/privacypolicy",
+      url: "https://gakuseibot.com/privacypolicy",
       priority: 1,
     },
     {
-      url: "https://gakuseibot.pkopko.jp/sponsor",
+      url: "https://gakuseibot.com/sponsor",
       priority: 1,
     },
   ];

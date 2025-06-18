@@ -12,16 +12,19 @@ export const metadata: Metadata = {
 export default function Home() {
   const posts = getRecentPosts("announce", 4);
   return (
-    <main className="flex min-h-screen w-full flex-col items-center bg-white text-black space-y-0">
-      <section className="w-full border flex flex-col items-center p-5 min-h-[370px] w-full bg-white text-black space-y-6 justify-center">
+    <main className="flex flex-col items-center w-full min-h-screen space-y-0 text-black bg-white">
+      <section className="w-full border flex flex-col items-center p-5 min-h-[370px] bg-white text-black space-y-6 justify-center">
         <h2 className="text-lg">学生のためのDiscord Bot</h2>
-        <h1 className="text-4xl font-bold mt-10">GakuseiBot</h1>
+        <h1 className="mt-10 text-4xl font-bold">GakuseiBot</h1>
         <p className="text-center">
           gakusei BOTは学生や開発者の支援を提供します。
           <br />
           時間管理、クイズ機能、グローバルチャット機能などを搭載しております。
         </p>
-        <Button href="/invite" className="mt-5">
+        <Button
+          href="/invite"
+          className="mt-5"
+        >
           招待する
         </Button>
       </section>
@@ -35,7 +38,7 @@ export default function Home() {
       </section>
       <section
         id="join"
-        className="flex space-y-5 items-center min-w-full lg:p-20 p-10 flex-col bg-gray-100"
+        className="flex flex-col items-center min-w-full p-10 space-y-5 bg-gray-100 lg:p-20"
       >
         <h3 className="text-2xl font-semibold">
           <a href="#join">サポートサーバー</a>
@@ -44,8 +47,12 @@ export default function Home() {
           <p>
             サポートサーバーでは、Botに関する最新情報を得たり、サポートを受けたりすることができます。
           </p>
-          <div className="flex lg:flex-row flex-col justify-center items-center lg:space-x-5 lg:space-y-0 space-y-3">
-            <Button<"Link"> href="/discord" className="lg:w-2/5 w-full" disabled={false}>
+          <div className="flex flex-col items-center justify-center space-y-3 lg:flex-row lg:space-x-5 lg:space-y-0">
+            <Button<"Link">
+              href="/discord"
+              className="w-full lg:w-2/5"
+              disabled={false}
+            >
               Discord
             </Button>
           </div>
