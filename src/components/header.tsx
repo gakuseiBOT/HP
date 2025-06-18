@@ -1,44 +1,44 @@
-import Image from "next/image";
-import Link from "next/link";
-import Hamburger from "./hamburger";
+import Image from 'next/image';
+import Link from 'next/link';
+import Hamburger from './hamburger';
 
 const Header = () => {
   const navItems = [
     {
-      label: "ホーム",
-      link: "/",
+      label: 'ホーム',
+      link: '/',
     },
     {
-      label: "お知らせ",
-      link: "/announce",
+      label: 'お知らせ',
+      link: '/announce',
     },
     {
-      label: "使い方",
-      link: "/howto",
+      label: '使い方',
+      link: '/howto',
     },
     {
-      label: "利用規約",
-      link: "/tos",
+      label: '利用規約',
+      link: '/tos',
     },
     {
-      label: "プライバシーポリシー",
-      link: "/privacypolicy",
+      label: 'プライバシーポリシー',
+      link: '/privacypolicy',
     },
     {
-      label: "開発者紹介",
-      link: "/member",
+      label: '開発者紹介',
+      link: '/member',
     },
     {
-      label: "お問い合わせ",
-      link: "/contact",
+      label: 'お問い合わせ',
+      link: '/contact',
     },
     {
-      label: "更新情報",
-      link: "/updates",
+      label: '更新情報',
+      link: '/updates',
     },
     {
-      label: "スポンサー",
-      link: "/sponsor",
+      label: 'スポンサー',
+      link: '/sponsor',
     },
   ];
   return (
@@ -48,7 +48,7 @@ const Header = () => {
         className="mt-6"
       >
         <Image
-          src={"/img/logo.png"}
+          src={'/img/logo.png'}
           alt="GakuseiBot's Logo"
           width={352}
           height={81}

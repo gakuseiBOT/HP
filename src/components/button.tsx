@@ -1,20 +1,20 @@
-"use client";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { ComponentPropsWithoutRef, JSX, Ref, forwardRef } from "react";
+'use client';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { ComponentPropsWithoutRef, JSX, Ref, forwardRef } from 'react';
 const styles = {
-  commonDesign: "border-b text-black px-4 py-2 leading-none m-2",
-  linkDisabled: "opacity-50 cursor-not-allowed leading-none",
+  commonDesign: 'border-b text-black px-4 py-2 leading-none m-2',
+  linkDisabled: 'opacity-50 cursor-not-allowed leading-none',
 };
 
-type ButtonProps = ComponentPropsWithoutRef<"button"> & {
+type ButtonProps = ComponentPropsWithoutRef<'button'> & {
   href: string;
 };
 type CustomLinkProps = ComponentPropsWithoutRef<typeof Link> & {
   disabled?: boolean;
 };
-type AS = "button" | "Link";
-type Props<T extends AS> = T extends "button" ? ButtonProps : CustomLinkProps;
+type AS = 'button' | 'Link';
+type Props<T extends AS> = T extends 'button' ? ButtonProps : CustomLinkProps;
 
 /**
  * Represents a button component.
@@ -72,4 +72,4 @@ export const Button = forwardRef<HTMLButtonElement, Props<AS>>((props, ref) => {
       </button>
     </>
   );
-}) as <T extends "button" | "Link" = "button">(p: Props<T>) => JSX.Element;
+}) as <T extends 'button' | 'Link' = 'button'>(p: Props<T>) => JSX.Element;

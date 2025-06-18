@@ -1,39 +1,39 @@
-import type { MetadataRoute } from "next";
+import type { MetadataRoute } from 'next';
 
-export const dynamic = "force-static";
+export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://gakuseibot.com/",
+      url: 'https://gakuseibot.com/',
       priority: 1,
     },
     {
-      url: "https://gakuseibot.com/announce",
+      url: 'https://gakuseibot.com/announce',
       priority: 1,
     },
     {
-      url: "https://gakuseibot.com/contact",
+      url: 'https://gakuseibot.com/contact',
       priority: 1,
     },
     {
-      url: "https://gakuseibot.com/howto",
+      url: 'https://gakuseibot.com/howto',
       priority: 1,
     },
     {
-      url: "https://gakuseibot.com/member",
+      url: 'https://gakuseibot.com/member',
       priority: 1,
     },
     {
-      url: "https://gakuseibot.com/tos",
+      url: 'https://gakuseibot.com/tos',
       priority: 1,
     },
     {
-      url: "https://gakuseibot.com/privacypolicy",
+      url: 'https://gakuseibot.com/privacypolicy',
       priority: 1,
     },
     {
-      url: "https://gakuseibot.com/sponsor",
+      url: 'https://gakuseibot.com/sponsor',
       priority: 1,
     },
   ];

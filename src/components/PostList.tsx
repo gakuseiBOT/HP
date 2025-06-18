@@ -1,7 +1,7 @@
-import Link from "next/link";
-import escapeHtml from "escape-html";
-import { Post } from "@/lib/posts";
-import { Button } from "./button";
+import Link from 'next/link';
+import escapeHtml from 'escape-html';
+import { Post } from '@/lib/posts';
+import { Button } from './button';
 
 type PostCardProps = {
   dirname: string;
@@ -62,7 +62,7 @@ const PostList = ({
         {posts.length === 0 && <p>記事がありません。</p>}
       </div>
       {!btnDisabled && !(posts.length === 0) && (
-        <Button<"button">
+        <Button<'button'>
           href={`/${dirname}`}
           className={btnClassName}
         >

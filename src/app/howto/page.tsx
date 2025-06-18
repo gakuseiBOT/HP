@@ -1,11 +1,11 @@
-import { NextPage } from "next";
-import React from "react";
-import { Metadata } from "next";
-import CmdCard from "@/components/cmdCard";
+import { NextPage } from 'next';
+import React from 'react';
+import { Metadata } from 'next';
+import CmdCard from '@/components/cmdCard';
 
 export const metadata: Metadata = {
-  title: "コマンド一覧 - gakuseiBotコミュニティ",
-  description: "gakuseiBOTのコマンド一覧です。",
+  title: 'コマンド一覧 - gakuseiBotコミュニティ',
+  description: 'gakuseiBOTのコマンド一覧です。',
 };
 
 const ContactsPage: NextPage = () => {
@@ -29,23 +29,23 @@ const ContactsPage: NextPage = () => {
           description="カスタム埋め込みを作成します。"
           args={[
             {
-              name: "タイトル",
-              description: "埋め込みのタイトルを入力します。",
-              defaultValue: "タイトル"
+              name: 'タイトル',
+              description: '埋め込みのタイトルを入力します。',
+              defaultValue: 'タイトル',
             },
             {
-              name: "説明",
-              description: "埋め込みに記載したいメッセージを入力します。",
-              defaultValue: "説明"
+              name: '説明',
+              description: '埋め込みに記載したいメッセージを入力します。',
+              defaultValue: '説明',
             },
             {
-              name: "カラー",
-              description: "埋め込みの色をカラーコードで指定できます。",
+              name: 'カラー',
+              description: '埋め込みの色をカラーコードで指定できます。',
               required: false,
             },
             {
-              name: "画像URL",
-              description: "指定したURLの画像を添付できます。",
+              name: '画像URL',
+              description: '指定したURLの画像を添付できます。',
               required: false,
             },
           ]}
@@ -208,37 +208,37 @@ const ContactsPage: NextPage = () => {
           description="アンケートを作成します。"
           args={[
             {
-              name: "title",
-              description: "タイトルを入力します。",
+              name: 'title',
+              description: 'タイトルを入力します。',
             },
             {
-              name: "question",
-              description: "質問を入力します。",
+              name: 'question',
+              description: '質問を入力します。',
             },
             {
-              name: "answer1",
-              description: "選択肢を入力します。",
+              name: 'answer1',
+              description: '選択肢を入力します。',
             },
             {
-              name: "answer2",
-              description: "選択肢を入力します。",
+              name: 'answer2',
+              description: '選択肢を入力します。',
             },
             {
-              name: "emoji1",
-              description: "選択肢の絵文字を入力します。",
+              name: 'emoji1',
+              description: '選択肢の絵文字を入力します。',
             },
             {
-              name: "emoji2",
-              description: "選択肢の絵文字を入力します。",
+              name: 'emoji2',
+              description: '選択肢の絵文字を入力します。',
             },
             {
-              name: "onevote",
-              description: "1つの選択肢にしか投票できないようにします。",
+              name: 'onevote',
+              description: '1つの選択肢にしか投票できないようにします。',
               required: false,
             },
             {
-              name: "color",
-              description: "埋め込みの色を指定します。",
+              name: 'color',
+              description: '埋め込みの色を指定します。',
               required: false,
             },
           ]}
@@ -252,16 +252,16 @@ const ContactsPage: NextPage = () => {
           description="指定した日付のリマインダーを設定します。"
           args={[
             {
-              name: "date",
-              description: "リマインダーを設定する日付です。",
+              name: 'date',
+              description: 'リマインダーを設定する日付です。',
             },
             {
-              name: "message",
-              description: "リマインダーの内容です。",
+              name: 'message',
+              description: 'リマインダーの内容です。',
             },
             {
-              name: "days_before",
-              description: "リマインダーの何日前に通知するかです。",
+              name: 'days_before',
+              description: 'リマインダーの何日前に通知するかです。',
             },
           ]}
         />

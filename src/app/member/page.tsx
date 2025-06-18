@@ -1,11 +1,11 @@
-import { NextPage } from "next";
-import React from "react";
-import { Metadata } from "next";
-import BioCard from "@/components/bioCard";
+import { NextPage } from 'next';
+import React from 'react';
+import { Metadata } from 'next';
+import BioCard from '@/components/bioCard';
 
 export const metadata: Metadata = {
-  title: "開発者紹介 - gakuseiBotコミュニティ",
-  description: "gakuseiBOTの開発を支えるメンバーたちをご紹介します。",
+  title: '開発者紹介 - gakuseiBotコミュニティ',
+  description: 'gakuseiBOTの開発を支えるメンバーたちをご紹介します。',
 };
 
 const ContactsPage: NextPage = () => {

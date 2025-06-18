@@ -1,13 +1,13 @@
-import { notFound } from "next/navigation";
-import { format } from "date-fns";
-import { ja } from "date-fns/locale";
-import updates from "@/data/updates.json";
-import fs from "fs/promises";
-import path from "path";
-import { remark } from "remark";
-import html from "remark-html";
-import Link from "next/link";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { notFound } from 'next/navigation';
+import { format } from 'date-fns';
+import { ja } from 'date-fns/locale';
+import updates from '@/data/updates.json';
+import fs from 'fs/promises';
+import path from 'path';
+import { remark } from 'remark';
+import html from 'remark-html';
+import Link from 'next/link';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 export default async function UpdateDetailPage(props: { params: Promise<{ slug: string }> }) {
   const { slug } = await props.params;
@@ -15,19 +15,19 @@ export default async function UpdateDetailPage(props: { params: Promise<{ slug: 
   const update = updates.find((u) => u.slug === slug);
   if (!update) return notFound();
 
-  const mdPath = path.join(process.cwd(), "src/data/updates", `${update.slug}.md`);
+  const mdPath = path.join(process.cwd(), 'src/data/updates', `${update.slug}.md`);
 
-  let contentHtml = "";
+  let contentHtml = '';
   try {
-    const fileContent = await fs.readFile(mdPath, "utf-8");
+    const fileContent = await fs.readFile(mdPath, 'utf-8');
     const processed = await remark().use(html).process(fileContent);
     contentHtml = processed.toString();
   } catch (err) {
-    console.error("Markdown読み込み失敗:", err);
-    contentHtml = "<p>本文が見つかりません</p>";
+    console.error('Markdown読み込み失敗:', err);
+    contentHtml = '<p>本文が見つかりません</p>';
   }
 
-  const formattedDate = format(new Date(update.date), "yyyy年MM月dd日", { locale: ja });
+  const formattedDate = format(new Date(update.date), 'yyyy年MM月dd日', { locale: ja });
 
   return (
     <main className="flex flex-col items-center w-full min-h-screen space-y-0 text-black bg-white">
@@ -44,7 +44,6 @@ export default async function UpdateDetailPage(props: { params: Promise<{ slug: 
         >
           <ArrowBackIcon style={{ fontSize: 20 }} /> 戻る
         </Link>
-        
       </div>
       <div
         className="prose prose-sm prose-blue"

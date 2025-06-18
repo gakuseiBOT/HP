@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --check .",
+    "format": "prettier --write ."
   },
   "overrides": {
     "eslint": "^9",

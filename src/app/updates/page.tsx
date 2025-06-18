@@ -1,14 +1,14 @@
-import UpdateTitle from "@/components/UpdateTitle";
-import fs from "fs/promises";
-import path from "path";
-import { Metadata } from "next";
+import UpdateTitle from '@/components/UpdateTitle';
+import fs from 'fs/promises';
+import path from 'path';
+import { Metadata } from 'next';
 
 type UpdateItem = {
   title: string;
   date: string;
   type: string;
   slug: string;
-}
+};
 
 const isNew = (dateStr: string) => {
   const now = new Date();
@@ -18,14 +18,14 @@ const isNew = (dateStr: string) => {
 };
 
 export const metadata: Metadata = {
-  title: "更新情報 - gakuseiBotコミュニティ",
-  description: "gakuseiBOTの更新情報をお知らせします。",
+  title: '更新情報 - gakuseiBotコミュニティ',
+  description: 'gakuseiBOTの更新情報をお知らせします。',
 };
 
 export default async function UpdatesPage() {
-  const filePath = path.join(process.cwd(), "src/data/updates.json");
+  const filePath = path.join(process.cwd(), 'src/data/updates.json');
 
-  const file = await fs.readFile(filePath, "utf-8");
+  const file = await fs.readFile(filePath, 'utf-8');
   const updates: UpdateItem[] = JSON.parse(file);
 
   return (
