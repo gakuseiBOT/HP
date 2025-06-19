@@ -64,7 +64,7 @@ export default function UpdateTitle({ title, date, type, slug, isNew }: Props) {
       >
         <div className="flex items-center gap-2">
           <span className="font-semibold">{title}</span>
-          {isNew && <span className="text-xs text-white bg-red-500 px-2 py-0.4 rounded">NEW</span>}
+          {isNew && <span className="text-xs text-white bg-red-500 px-2 py-0.5 rounded">NEW</span>}
         </div>
       </Link>
       <div className="text-sm text-gray-500 mt-1 flex items-center gap-4">
