@@ -17,10 +17,9 @@ const PostCard = ({ dirname, slug, title, date, description }: PostCardProps) =>
       className="post-card text-black w-full"
       key={slug}
     >
-      {/* このcontent-endってtailwindにないらしい */}
-      <div className="flex content-end flex-col xl:flex-row justify-between mb-2">
+      <div className="flex flex-col xl:flex-row justify-between mb-2">
         <h2 className="text-xl">{title}</h2>
-        <small className="content-end">{date}</small>
+        <small>{date}</small>
       </div>
       <p className="text-sm mb-2">{description}</p>
       <Link href={`/${escapeHtml(dirname)}/${escapeHtml(slug)}`}>続きを読む</Link>
