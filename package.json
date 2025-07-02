@@ -18,7 +18,7 @@
   "dependencies": {
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.1.2",
     "@mui/joy": "^5.0.0-beta.52",
     "@mui/material": "^7.1.2",
