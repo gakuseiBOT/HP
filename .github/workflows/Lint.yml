@@ -20,11 +20,19 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a single command using the runners shell
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v4.2.2
 
-      - name: npm init
-        run: npm install
+      - name: use Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
 
-      - name: Next lint
-        run: npm run lint
+      - name: install bun
+        run: npm install -g bun
+
+      - name: bun init
+        run: bun i
+
+      - name: next lint
+        run: bun lint
