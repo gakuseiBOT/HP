@@ -18,7 +18,7 @@
         "gray-matter": "^4.0.3",
         "next": "15.4.2",
         "next-mdx-remote": "^5.0.0",
-        "react": "19.0.0",
+        "react": "19.1.1",
         "react-dom": "19.0.0",
         "react-markdown": "^10.1.0",
         "remark": "^15.0.1",
@@ -34,7 +34,7 @@
         "@tailwindcss/postcss": "^4.1.11",
         "@types/escape-html": "^1.0.4",
         "@types/node": "^24.1.0",
-        "@types/react": "19.0.2",
+        "@types/react": "19.1.12",
         "@types/react-dom": "19.0.2",
         "eslint": "^9.32.0",
         "eslint-config-next": "15.4.2",
@@ -998,7 +998,7 @@
 
     "queue-microtask": ["queue-microtask@1.2.3", "", {}, "sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A=="],
 
-    "react": ["react@19.0.0", "", {}, "sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ=="],
+    "react": ["react@19.1.1", "", {}, "sha512-w8nqGImo45dmMIfljjMwOGtbmC/mk4CMYhWIicdSflH91J9TyCyczcPFXJzrZ/ZXcgGRFeP6BU0BEJTw6tZdfQ=="],
 
     "react-dom": ["react-dom@19.0.0", "", { "dependencies": { "scheduler": "^0.25.0" }, "peerDependencies": { "react": "^19.0.0" } }, "sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ=="],
 
