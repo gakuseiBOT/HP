@@ -1,18 +1,19 @@
-import { FlatCompat } from '@eslint/eslintrc';
-import { fixupConfigRules } from '@eslint/compat';
-import prettier from 'eslint-config-prettier';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { FlatCompat } from '@eslint/eslintrc'
 
-const flatCompat = new FlatCompat();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename)
 
-/**
- * @type {import("eslint").Linter.Config}
- */
-const config = [
-  ...fixupConfigRules(
-    flatCompat.extends('next/core-web-vitals'),
-    flatCompat.extends('next/typescript')
-  ),
-  prettier,
-];
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+})
 
-export default config;
+const eslintConfig = [
+  {
+    ignores: ['node_modules/**', '.next/**', 'out/**', 'next-env.d.ts'],
+  },
+  ...compat.extends('next/core-web-vitals', 'next/typescript')
+]
+
+export default eslintConfig
