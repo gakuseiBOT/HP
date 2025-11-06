@@ -27,7 +27,7 @@ type Props<T extends AS> = T extends 'button' ? ButtonProps : CustomLinkProps;
 // eslint-disable-next-line react/display-name
 export const Button = forwardRef<HTMLButtonElement, Props<AS>>((props, ref) => {
   const router = useRouter();
-  const handleClick = (e: MouseEvent<HTMLButtonElement>, href: string) => { 
+  const handleClick = (e: MouseEvent<HTMLButtonElement>, href: string) => {
     e.preventDefault();
     router.push(href);
   };
