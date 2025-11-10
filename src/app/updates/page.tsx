@@ -29,16 +29,16 @@ export default async function UpdatesPage() {
   const updates: UpdateItem[] = JSON.parse(file);
 
   return (
-    <main className="flex flex-col items-center w-full min-h-screen space-y-0 text-black bg-white">
+    <main className="flex flex-col items-center min-h-screen space-y-0 text-black bg-white p-20 w-full">
       <section
         id="updates-head"
-        className="w-full border flex flex-col items-center p-5 min-h-[370px] bg-white text-black space-y-6 justify-center"
+        className="w-full flex flex-col items-center p-5 bg-white text-black space-y-6 justify-center"
       >
-        <h1 className="mt-10 text-4xl font-bold">更新情報</h1>
+        <h1 className="text-4xl font-bold">更新情報</h1>
         <p className="text-lg">日々新しくなるgakuseiBOTの様子をお伝えします。</p>
       </section>
 
-      <div className="max-w-2xl px-4 mx-auto">
+      <div className="min-w-3/5 px-4 mx-auto">
         {updates.map((update) => (
           <UpdateTitle
             key={update.slug}
