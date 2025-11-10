@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 type UpdateItem = {
   title: string;
   date: string;
-  type: string;
+  type: 'feature' | 'bugfix' | 'improvement' | 'other';
   slug: string;
 };
 
@@ -39,7 +39,7 @@ export default async function UpdatesPage() {
       </section>
 
       <div className="min-w-3/5 px-4 mx-auto">
-        {updates.map((update: any) => (
+        {updates.map((update) => (
           <UpdateTitle
             key={update.slug}
             title={update.title}

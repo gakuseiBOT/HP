@@ -38,20 +38,26 @@ export default async function PostPage({ params }: PostPageProps) {
   if (!post) {
     return <div>記事が見つかりません。</div>;
   }
-  const markdownContent = `
-# ${post.title}
-
-投稿日: ${new Date(post.date).toLocaleDateString()}
-  
-${post.content}
-  `;
   const posts = await getRecentPosts('announce', 8);
 
   return (
     <div className="bg-white min-h-screen w-full text-black p-5">
-      <article className="min-h-96 p-4 w-full">
+      <article className="min-h-96 p-4 w-full flex flex-col items-center">
+        <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
+        <p className="text-gray-600 mb-2">
+          {new Date(post.date).toLocaleDateString('ja-JP', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </p>
         <div className="markdown mx-auto">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdownContent}</ReactMarkdown>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{ h1: 'h2' }}
+          >
+            {post.content}
+          </ReactMarkdown>
         </div>
       </article>
       <h1 className="text-2xl mx-auto lg:w-2/5 w-4/5 text-left mb-5">最近のアナウンス</h1>
