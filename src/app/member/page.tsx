@@ -41,10 +41,11 @@ const ContactsPage: NextPage = () => {
         <BioCard
           avatar="https://github.com/takoyakidath.png"
           github="takoyakidath"
-          name="takoyaki_death"
+          name="takoyakidath"
           role="Engineer"
           text="クラウドサーバーの管理等をしていただいています。"
-          twitter="Takoyaki_death"
+          twitter="takoyakidath"
+          homepage="https://takoyaki.pkopko.jp"
         />
         <BioCard
           avatar="https://github.com/maikuradentetu.png"
