@@ -127,6 +127,7 @@ const ContactsPage: NextPage = () => {
             name=member.name
             role=member.role
             text=member.text
+            homepage=member.homepage
             github=member.github
             twitter=member.twitter
           /> 
