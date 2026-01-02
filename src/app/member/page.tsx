@@ -121,8 +121,9 @@ const ContactsPage: NextPage = () => {
         id="members"
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 p-20 justify-items-center items-center mx-auto max-w-7xl"
       >
-        { MEMBER_DATA.map((member) => (
+        { MEMBER_DATA.map((member, index) => (
           <BioCard
+            key={index}
             avatar=member.avatar
             name=member.name
             role=member.role
