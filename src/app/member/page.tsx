@@ -16,7 +16,7 @@ interface MemberData {
   twitter?: string;
   github?: string;
   role: string;
-};
+}
 
 const MEMBER_DATA: MemberData[] = [
   {
