@@ -124,13 +124,13 @@ const ContactsPage: NextPage = () => {
         { MEMBER_DATA.map((member, index) => (
           <BioCard
             key={index}
-            avatar=member.avatar
-            name=member.name
-            role=member.role
-            text=member.text
-            homepage=member.homepage
-            github=member.github
-            twitter=member.twitter
+            avatar={member.avatar}
+            name={member.name}
+            role={member.role}
+            text={member.text}
+            homepage={member.homepage}
+            github={member.github}
+            twitter={member.twitter}
           /> 
         ))}
       </section>
