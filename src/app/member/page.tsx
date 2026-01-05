@@ -59,7 +59,7 @@ const MEMBER_DATA: MemberData[] = [
     text: "フルスタックエンジニアをしています。",
     github: "yuito-it",
     twitter: "yuito_it_",
-    homepage: "https://yuito.work"
+    homepage: "https://yuito-it.jp"
   },
   {
     avatar: "https://github.com/hosshey7240.png",
