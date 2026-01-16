@@ -42,7 +42,7 @@
     "tocbot": "^4.36.4"
   },
   "devDependencies": {
-    "@eslint/compat": "^2.0.0",
+    "@eslint/compat": "^2.0.1",
     "@tailwindcss/postcss": "^4.1.18",
     "@types/escape-html": "^1.0.4",
     "@types/node": "^25.0.6",
