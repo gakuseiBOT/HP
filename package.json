@@ -21,7 +21,7 @@
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.3.7",
     "@mui/joy": "^5.0.0-beta.52",
-    "@mui/material": "^7.3.6",
+    "@mui/material": "^7.3.7",
     "@mui/material-nextjs": "^7.3.6",
     "@next/third-parties": "16.1.1",
     "@tailwindcss/typography": "^0.5.19",
