@@ -1,4 +1,4 @@
-export type MemberRole = "Owner" | "Engineer" | "Adviser" | "Moderator" | "Creator";
+export type MemberRole = 'Owner' | 'Engineer' | 'Adviser' | 'Moderator' | 'Creator';
 
 export interface MemberData {
   name: string;
