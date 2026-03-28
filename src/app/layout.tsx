@@ -2,7 +2,6 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import './globals.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Metadata, Viewport } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
 import Header from '@/components/header';
 
@@ -39,12 +38,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <Head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0"
-        />
-      </Head>
       <GoogleAnalytics gaId={'G-T218GPX3X5'} />
       <body className="w-full">
         <Header />
