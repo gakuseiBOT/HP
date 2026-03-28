@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'gakuseiBOTのアナウンス一覧です。',
 };
 
-const ContactsPage: NextPage = () => {
+const Announce: NextPage = () => {
   const posts = getAllPosts('announce');
   return (
     <main className="flex min-h-screen flex-col items-center bg-white text-black space-y-10 p-5">
@@ -25,4 +25,4 @@ const ContactsPage: NextPage = () => {
   );
 };
 
-export default ContactsPage;
+export default Announce;

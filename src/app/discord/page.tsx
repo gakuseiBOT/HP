@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation';
 
-const page = async () => {
+const Discord = async () => {
   redirect('https://discord.com/invite/xaSYvUbAj5');
 };
 
-export default page;
+export default Discord;

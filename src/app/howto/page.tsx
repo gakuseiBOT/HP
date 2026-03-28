@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'gakuseiBOTのコマンド一覧です。',
 };
 
-const ContactsPage: NextPage = () => {
+const Howto: NextPage = () => {
   return (
     <main className="flex flex-col min-h-screen bg-white text-black space-y-0">
       <section
@@ -296,4 +296,4 @@ const ContactsPage: NextPage = () => {
   );
 };
 
-export default ContactsPage;
+export default Howto;
