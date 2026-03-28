@@ -1,10 +1,31 @@
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import './globals.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { Metadata } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-
 import Header from '@/components/header';
+
+const title = "GakuseiBOTコミュニティ - ホームページ";
+const description = "gakuseiBotは学生や開発者の支援を提供します。時間管理、クイズ機能、グローバルチャット機能などを搭載しております。";
+
+export const metadata: Metadata = {
+  title: {
+    default: title,
+    template: "%s - GakuseiBOTコミュニティ"
+  },
+  description,
+
+  openGraph: {
+    title,
+    description,
+  },
+
+  twitter: {
+    title,
+    description,
+  }
+}
 
 export default function RootLayout({
   children,
