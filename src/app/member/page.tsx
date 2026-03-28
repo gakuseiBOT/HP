@@ -15,7 +15,7 @@ interface MemberData {
   homepage?: string;
   twitter?: string;
   github?: string;
-  role: string;
+  role: "Owner" | "Engineer" | "Adviser" | "Moderator" | "Creator";
 }
 
 const MEMBER_DATA: MemberData[] = [
@@ -86,13 +86,13 @@ const MEMBER_DATA: MemberData[] = [
   },
   {
     name: "kento_kato.",
-    role: "Programmer",
+    role: "Engineer",
     text: "皆様が使いやすいHPを作れるように頑張ります。"
   },
   {
     avatar: "https://github.com/Puton1221.png",
     name: "ぷとん(Puton)",
-    role: "Programmer",
+    role: "Engineer",
     text: "培ってきた技術を元に発展に力を注げるよう頑張ります。",
     github: "PUton1221",
     twitter: "PutonFPS"
@@ -100,7 +100,7 @@ const MEMBER_DATA: MemberData[] = [
   {
     avatar: "https://github.com/nemu-a1021.png",
     name: "ねむa",
-    role: "Programmer",
+    role: "Engineer",
     text: "頑張ります。",
     github: "nemu-a1021",
     twitter: "nemu_adatoomou"
