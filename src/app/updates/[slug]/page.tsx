@@ -16,9 +16,12 @@ type UpdateDetailPageProps = {
 export async function generateMetadata(props: UpdateDetailPageProps) {
   const { slug } = await props.params;
   const update = updates.find((u) => u.slug === slug);
+  if (!update) return {
+    title: "アップデートが見つかりませんでした"
+  }
 
   return {
-    title: `${update?.title} - ${update?.date}`,
+    title: `${update?.title ?? "無名のアップデート"} - ${update?.date ?? "不明な日時"}`,
   }
 }
 
