@@ -107,7 +107,7 @@ const MEMBER_DATA: MemberData[] = [
   }
 ];
 
-const ContactsPage: NextPage = () => {
+const Member: NextPage = () => {
   return (
     <main className="flex flex-col min-h-screen bg-white text-black space-y-0">
       <section
@@ -138,4 +138,4 @@ const ContactsPage: NextPage = () => {
   );
 };
 
-export default ContactsPage;
+export default Member;
