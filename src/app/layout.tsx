@@ -1,7 +1,7 @@
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import './globals.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import Header from '@/components/header';
@@ -25,6 +25,11 @@ export const metadata: Metadata = {
     title,
     description,
   }
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1
 }
 
 export default function RootLayout({
