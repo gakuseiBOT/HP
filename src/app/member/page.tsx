@@ -1,22 +1,12 @@
 import { NextPage } from 'next';
-import React from 'react';
 import { Metadata } from 'next';
+import { MemberData } from '@/type/member';
 import BioCard from '@/components/bioCard';
 
 export const metadata: Metadata = {
   title: '開発者紹介 - gakuseiBotコミュニティ',
   description: 'gakuseiBOTの開発を支えるメンバーたちをご紹介します。',
 };
-
-interface MemberData {
-  name: string;
-  avatar?: string;
-  text: string;
-  homepage?: string;
-  twitter?: string;
-  github?: string;
-  role: "Owner" | "Engineer" | "Adviser" | "Moderator" | "Creator";
-}
 
 const MEMBER_DATA: MemberData[] = [
   {
@@ -124,13 +114,7 @@ const Member: NextPage = () => {
         { MEMBER_DATA.map((member, index) => (
           <BioCard
             key={index}
-            avatar={member.avatar}
-            name={member.name}
-            role={member.role}
-            text={member.text}
-            homepage={member.homepage}
-            github={member.github}
-            twitter={member.twitter}
+            {...member}
           /> 
         ))}
       </section>
