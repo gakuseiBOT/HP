@@ -9,10 +9,7 @@ const title = "GakuseiBOTコミュニティ - ホームページ";
 const description = "gakuseiBotは学生や開発者の支援を提供します。時間管理、クイズ機能、グローバルチャット機能などを搭載しております。";
 
 export const metadata: Metadata = {
-  title: {
-    default: title,
-    template: "%s - GakuseiBOTコミュニティ"
-  },
+  title,
   description,
 
   openGraph: {
