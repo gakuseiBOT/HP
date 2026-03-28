@@ -22,88 +22,88 @@ const MEMBER_DATA: MemberData[] = [
   {
     name: "aki._.yama",
     avatar: "https://github.com/akiy2009.png",
+    text: "gakuseiBOTの設計と全体統括を担当しています。",
+    twitter: "JJ5RVW_2022",
     github: "akiy2009",
     role: "Owner",
-    text: "gakuseiBOTの設計と全体統括を担当しています。",
-    twitter: "JJ5RVW_2022"
   },
   {
-    avatar: "https://github.com/Yori072.png",
-    github: "Yori072",
     name: "y_yori07",
-    role: "Engineer",
+    avatar: "https://github.com/Yori072.png",
     text: "HPの作成頑張ってもらっています。",
-    twitter: "Yori07_Editor"
+    twitter: "Yori07_Editor",
+    github: "Yori072",
+    role: "Engineer",
   },
   {
-    avatar: "https://github.com/takoyakidath.png",
-    github: "takoyakidath",
     name: "takoyakidath",
-    role: "Engineer",
+    avatar: "https://github.com/takoyakidath.png",
     text: "クラウドサーバーの管理等をしていただいています。",
+    homepage: "https://takoyaki.pkopko.jp",
     twitter: "takoyakidath",
-    homepage: "https://takoyaki.pkopko.jp"
-  },
-  {
-    avatar: "https://github.com/maikuradentetu.png",
-    github: "maikuradentetu",
-    name: "maikuradentetu",
-    role: "Adviser",
-    text: "今まで培ってきた経験を共有していただいています。",
-    twitter: "nanka365"
-  },
-  {
-    avatar: "https://github.com/yuito-it.png",
-    name: "YuitoAkatsuki",
+    github: "takoyakidath",
     role: "Engineer",
+  },
+  {
+    name: "maikuradentetu",
+    avatar: "https://github.com/maikuradentetu.png",
+    text: "今まで培ってきた経験を共有していただいています。",
+    twitter: "nanka365",
+    github: "maikuradentetu",
+    role: "Adviser",
+  },
+  {
+    name: "YuitoAkatsuki",
+    avatar: "https://github.com/yuito-it.png",
     text: "フルスタックエンジニアをしています。",
+    homepage: "https://yuito-it.jp",
     github: "yuito-it",
     twitter: "yuito_it_",
-    homepage: "https://yuito-it.jp"
+    role: "Engineer",
   },
   {
-    avatar: "https://github.com/hosshey7240.png",
-    github: "hosshey7240",
     name: "hosshey_7240",
-    role: "Moderator",
+    avatar: "https://github.com/hosshey7240.png",
     text: "モデレーターとして、サーバーの管理をしていただいています。",
     twitter: "hosshey_7240",
-  },
-  {
-    avatar: "https://github.com/Hazometa.png",
-    github: "Hazometa",
-    name: "hazometa",
+    github: "hosshey7240",
     role: "Moderator",
-    text: "サーバーの管理をメインで活動していただいています。"
   },
   {
-    avatar: "https://github.com/i03-Dinar.png",
+    name: "hazometa",
+    avatar: "https://github.com/Hazometa.png",
+    text: "サーバーの管理をメインで活動していただいています。",
+    github: "Hazometa",
+    role: "Moderator",
+  },
+  {
     name: "Dinar",
-    role: "Creator",
+    avatar: "https://github.com/i03-Dinar.png",
     text: "gakuseiBOTのアイコンやホームページを作ります。",
+    twitter: "i03_Dinar",
     github: "i03-Dinar",
-    twitter: "i03_Dinar"
+    role: "Creator",
   },
   {
     name: "kento_kato.",
+    text: "皆様が使いやすいHPを作れるように頑張ります。",
     role: "Engineer",
-    text: "皆様が使いやすいHPを作れるように頑張ります。"
   },
   {
-    avatar: "https://github.com/Puton1221.png",
     name: "ぷとん(Puton)",
-    role: "Engineer",
+    avatar: "https://github.com/Puton1221.png",
     text: "培ってきた技術を元に発展に力を注げるよう頑張ります。",
     github: "PUton1221",
-    twitter: "PutonFPS"
+    twitter: "PutonFPS",
+    role: "Engineer",
   },
   {
-    avatar: "https://github.com/nemu-a1021.png",
     name: "ねむa",
-    role: "Engineer",
+    avatar: "https://github.com/nemu-a1021.png",
     text: "頑張ります。",
     github: "nemu-a1021",
-    twitter: "nemu_adatoomou"
+    twitter: "nemu_adatoomou",
+    role: "Engineer",
   }
 ];
 
