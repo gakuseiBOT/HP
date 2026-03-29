@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   }
 
   return {
-    title: `${post.title} | `,
+    title: `${post.title}`,
     description: post.description || '詳細はこの記事をご覧ください。',
     openGraph: {
       title: post.title,
@@ -34,11 +34,10 @@ type PostPageProps = {
 
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params;
-  const post = await getPostBySlug('announce', slug);
+  const [post, posts] = await Promise.all([getPostBySlug('announce', slug), getRecentPosts('announce', 8)]);
   if (!post) {
     return <div>記事が見つかりません。</div>;
   }
-  const posts = await getRecentPosts('announce', 8);
 
   return (
     <div className="bg-white min-h-screen w-full text-black p-5">
