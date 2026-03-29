@@ -1,5 +1,5 @@
 'use client';
-
+import { useCallback } from 'react';
 import Link from 'next/link';
 import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
@@ -27,7 +27,7 @@ const typeColors: Record<string, string> = {
 };
 
 export default function UpdateTitle({ title, date, type, slug, isNew }: Props) {
-  const formattedDate = (rawDate: unknown) => {
+  const formattedDate = useCallback((rawDate: unknown) => {
     let date: Date;
 
     if (typeof rawDate === 'string' || rawDate instanceof Date) {
@@ -43,18 +43,18 @@ export default function UpdateTitle({ title, date, type, slug, isNew }: Props) {
     }
 
     return format(date, 'yyyy年MM月dd日', { locale: ja });
-  };
+  }, []);
 
-  const formattedType = (type: unknown) => {
+  const formattedType = useCallback((rawType: unknown) => {
     const validTypes = ['feature', 'bugfix', 'improvement', 'other'];
 
-    if (!validTypes.includes(type as string)) {
-      console.error('Invalid type:', type);
+    if (!validTypes.includes(rawType as string)) {
+      console.error('Invalid type:', rawType);
       return '';
     }
 
-    return typeLabels[type as string] ?? type;
-  };
+    return typeLabels[rawType as string] ?? rawType;
+  }, []);
 
   return (
     <div className="border-b py-4">
