@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import styles from './index.module.css';
+import styles from '@/styles/index.module.css';
 
 type PropsType = {
   images: string[];
