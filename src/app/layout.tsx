@@ -3,7 +3,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import { Metadata, Viewport } from 'next';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
-import './globals.css';
+import '@/styles/globals.css';
 
 const title = "GakuseiBOTコミュニティ - ホームページ";
 const description = "gakuseiBotは学生や開発者の支援を提供します。時間管理、クイズ機能、グローバルチャット機能などを搭載しております。";
