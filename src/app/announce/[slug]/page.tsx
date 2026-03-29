@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 
 export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = await getPostBySlug('announce', slug);
+  const post = getPostBySlug('announce', slug);
 
   if (!post) {
     return {
@@ -39,7 +39,7 @@ export default async function PostPage({ params }: PostPageProps) {
     return <div>記事が見つかりません。</div>;
   }
   const posts = getRecentPosts('announce');
-  
+
   return (
     <div className="bg-white min-h-screen w-full text-black p-5">
       <article className="min-h-96 p-4 w-full flex flex-col items-center">
