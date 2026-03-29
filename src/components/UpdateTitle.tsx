@@ -4,22 +4,24 @@ import Link from 'next/link';
 import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
 
+
+type Type = "feature" | "bugfix" | "improvement" | "other";
 type Props = {
   title: string;
   date: string;
-  type: 'feature' | 'bugfix' | 'improvement' | 'other';
+  type: Type;
   slug: string;
   isNew: boolean;
 };
 
-const typeLabels: { [key: string]: string } = {
+const typeLabels: Record<Type, string> = {
   feature: '新機能',
   bugfix: 'バグ修正',
   improvement: '改善',
   other: 'その他',
 };
 
-const typeColors: Record<string, string> = {
+const typeColors: Record<Type, string> = {
   feature: 'bg-green-200 text-green-800',
   bugfix: 'bg-red-200 text-red-800',
   improvement: 'bg-blue-200 text-blue-800',
@@ -53,7 +55,7 @@ export default function UpdateTitle({ title, date, type, slug, isNew }: Props) {
       return '';
     }
 
-    return typeLabels[rawType as string] ?? rawType;
+    return typeLabels[rawType as Type] ?? rawType;
   }, []);
 
   return (
