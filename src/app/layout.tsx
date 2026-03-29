@@ -1,8 +1,8 @@
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Metadata, Viewport } from 'next';
-import Header from '@/components/header';
-import Footer from '@/components/footer';
+import Header from '@/components/layout/header';
+import Footer from '@/components/layout/footer';
 import './globals.css';
 
 const title = "GakuseiBOTコミュニティ - ホームページ";
