@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 
 export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = await getPostBySlug('announce', slug);
+  const post = getPostBySlug('announce', slug);
 
   if (!post) {
     return {
@@ -17,13 +17,13 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   }
 
   return {
-    title: `${post.title} | `,
+    title: `${post.title}`,
     description: post.description || '詳細はこの記事をご覧ください。',
     openGraph: {
       title: post.title,
       description: post.description || '詳細はこの記事をご覧ください。',
       type: 'article',
-      url: `https://announce/${slug}`,
+      url: `https://gakuseibot.com/announce/${slug}`,
     },
   };
 }
@@ -34,11 +34,11 @@ type PostPageProps = {
 
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params;
-  const post = await getPostBySlug('announce', slug);
+  const post = getPostBySlug('announce', slug);
   if (!post) {
     return <div>記事が見つかりません。</div>;
   }
-  const posts = await getRecentPosts('announce', 8);
+  const posts = getRecentPosts('announce');
 
   return (
     <div className="bg-white min-h-screen w-full text-black p-5">

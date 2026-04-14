@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { MouseEvent, ComponentPropsWithoutRef, JSX, Ref, forwardRef } from 'react'; // MouseEvent を追加
+import { MouseEvent, ComponentPropsWithoutRef, JSX, forwardRef } from 'react'; // MouseEvent を追加
 const styles = {
   commonDesign: 'border-b text-black px-4 py-2 leading-none m-2',
   linkDisabled: 'opacity-50 cursor-not-allowed leading-none',
@@ -25,7 +25,7 @@ type Props<T extends AS> = T extends 'button' ? ButtonProps : CustomLinkProps;
  * @returns {JSX.Element} - The rendered button component.
  */
 // eslint-disable-next-line react/display-name
-export const Button = forwardRef<HTMLButtonElement, Props<AS>>((props, ref) => {
+export const Button = forwardRef<HTMLButtonElement, Props<AS>>((props, _) => {
   const router = useRouter();
   const handleClick = (e: MouseEvent<HTMLButtonElement>, href: string) => { 
     e.preventDefault();
