@@ -24,7 +24,7 @@
     "@mui/material": "^7.3.7",
     "@mui/material-nextjs": "^7.3.9",
     "@next/third-parties": "16.2.9",
-    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/typography": "^0.5.20",
     "date-fns": "^4.4.0",
     "escape-html": "^1.0.3",
     "gray-matter": "^4.0.3",
