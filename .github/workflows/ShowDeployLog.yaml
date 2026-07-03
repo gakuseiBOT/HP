@@ -9,7 +9,7 @@ jobs:
   show-deploy-log:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - name: Install Vercel CLI
         run: npm install -g vercel
       - name: Link Vercel Project
@@ -23,7 +23,7 @@ jobs:
         run: echo deploy_log=$(cat deploy-log.txt) >> $GITHUB_ENV
       - name: Show Deploy Log
         run: cat deploy-log.txt
-      - uses: actions/github-script@v6
+      - uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
