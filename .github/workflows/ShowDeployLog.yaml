@@ -23,7 +23,7 @@ jobs:
         run: echo deploy_log=$(cat deploy-log.txt) >> $GITHUB_ENV
       - name: Show Deploy Log
         run: cat deploy-log.txt
-      - uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
+      - uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
