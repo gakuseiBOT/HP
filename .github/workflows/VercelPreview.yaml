@@ -33,7 +33,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   deployment:
     needs: checkLabels
-    if: ${{ !(contains(fromJSON(needs.checkLabels.outputs.output1), 'dependencies') || contains(fromJSON(needs.checkLabels.outputs.output1), 'documentation') || contains(fromJSON(needs.checkLabels.outputs.output1), 'duplicate') || contains(fromJSON(needs.checkLabels.outputs.output1), 'devtool') ) }}
+    if: ${{ !(contains(fromJSON(needs.checkLabels.outputs.output1), 'kind/dependency-update') || contains(fromJSON(needs.checkLabels.outputs.output1), 'documentation') || contains(fromJSON(needs.checkLabels.outputs.output1), 'duplicate') || contains(fromJSON(needs.checkLabels.outputs.output1), 'devtool') ) }}
     runs-on: ubuntu-latest
     concurrency: Preview
     environment:
