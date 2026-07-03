@@ -22,7 +22,7 @@ jobs:
           json=$(gh pr view "$PR_NUMBER" --json labels | jq -c '.labels|map(.name)')
           echo "json=$json" >> "$GITHUB_OUTPUT"
       - name: Comment on PR
-        if: ${{ contains(fromJSON(steps.labels.outputs.json), 'dependencies') || contains(fromJSON(steps.labels.outputs.json), 'documentation') || contains(fromJSON(steps.labels.outputs.json), 'duplicate') || contains(fromJSON(steps.labels.outputs.json), 'devtool') }}
+        if: ${{ contains(fromJSON(steps.labels.outputs.json), 'kind/dependency-update') || contains(fromJSON(steps.labels.outputs.json), 'documentation') || contains(fromJSON(steps.labels.outputs.json), 'duplicate') || contains(fromJSON(steps.labels.outputs.json), 'devtool') }}
         run: |
           cat  << EOF > comment.md
           ## :rocket: Preview Deployment
