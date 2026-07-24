@@ -19,9 +19,11 @@ export async function generateMetadata(props: UpdateDetailPageProps) {
   if (!update) return {
     title: "アップデートが見つかりませんでした"
   }
+  
+  if (!update) return { title: "更新情報が見つかりません" };
 
   return {
-    title: `${update?.title ?? "無名のアップデート"} - ${update?.date ?? "不明な日時"}`,
+    title: `${update.title} - ${update.date}`,
   }
 }
 
