@@ -25,7 +25,22 @@ type Props<T extends AS> = T extends 'button' ? ButtonProps : CustomLinkProps;
  * @returns {JSX.Element} - The rendered button component.
  */
 // eslint-disable-next-line react/display-name
-export const Button = forwardRef<HTMLButtonElement, Props<AS>>((props, _) => {
+export const Button = forwardRef<HTMLButtonElement, Props<AS>>((props, ref) => {
+  const router = useRouter();
+  const handleClick = (e: MouseEvent<HTMLButtonElement>, href: string) => {
+    e.preventDefault();
+    router.push(href);
+  };
+
+  const buttonAttributes = props as ButtonProps;
+  const { disabled, ...linkAttributes } = props as unknown as CustomLinkProps;
+  return (
+    <>
+      <button
+        ref={ref}
+        onClick={(e) => handleClick(e, buttonAttributes.href)}
+        className={`${disabled && styles.linkDisabled} ${props.className} group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-neutral-950 px-6 font-medium text-neutral-200`}
+      >
   const router = useRouter();
   const handleClick = (e: MouseEvent<HTMLButtonElement>, href: string) => { 
     e.preventDefault();
