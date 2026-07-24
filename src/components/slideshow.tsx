@@ -1,13 +1,18 @@
 'use client';
-import React, { JSX, useEffect, useState } from 'react';
+import { SwiperOptions } from 'swiper/types';
+import { JSX, useEffect, useState, useMemo } from 'react';
 import Image from 'next/image';
-
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import styles from './index.module.css';
+import styles from '@/styles/index.module.css';
+
+type SwiperSetting = {
+    [width: number]: SwiperOptions;
+    [ratio: string]: SwiperOptions;
+}
 
 type PropsType = {
   images: string[];
@@ -32,7 +37,7 @@ const useIsPc = () => {
 
 function Mobile({ images }: PropsType): JSX.Element {
   console.log('mobile');
-  const slideSettings = {
+  const slideSettings = useMemo<SwiperSetting>(() => ({
     0: {
       slidesPerView: 0,
       spaceBetween: 1,
@@ -41,7 +46,7 @@ function Mobile({ images }: PropsType): JSX.Element {
       slidesPerView: 0,
       spaceBetween: 1,
     },
-  };
+  }), []);
   const imageStyle = '';
   return (
     <Swiper
@@ -81,7 +86,7 @@ function Mobile({ images }: PropsType): JSX.Element {
 
 const PC = ({ images }: PropsType) => {
   console.log('pc');
-  const slideSettings = {
+  const slideSettings = useMemo<SwiperSetting>(() => ({
     0: {
       slidesPerView: 1.4,
       spaceBetween: 10,
@@ -90,8 +95,8 @@ const PC = ({ images }: PropsType) => {
       slidesPerView: 2,
       spaceBetween: 10,
     },
-  };
-  const imageStyle = styles.slideImage;
+  }), []);
+  const imageStyle = useMemo(() => styles.slideImage, [styles]);
   return (
     <Swiper
       modules={[Navigation, Pagination, Autoplay]}

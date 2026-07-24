@@ -9,7 +9,25 @@ import html from 'remark-html';
 import Link from 'next/link';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-export default async function UpdateDetailPage(props: { params: Promise<{ slug: string }> }) {
+type UpdateDetailPageProps = {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata(props: UpdateDetailPageProps) {
+  const { slug } = await props.params;
+  const update = updates.find((u) => u.slug === slug);
+  if (!update) return {
+    title: "アップデートが見つかりませんでした"
+  }
+  
+  if (!update) return { title: "更新情報が見つかりません" };
+
+  return {
+    title: `${update.title} - ${update.date}`,
+  }
+}
+
+export default async function UpdateDetailPage(props: UpdateDetailPageProps) {
   const { slug } = await props.params;
 
   const update = updates.find((u) => u.slug === slug);
