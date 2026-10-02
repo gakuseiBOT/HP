@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "local>gakuseiBOT/renovate-config"
+    "github>UniPro-tech/renovate-config//default"
   ]
 }
