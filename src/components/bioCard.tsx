@@ -1,5 +1,4 @@
 'use client';
-import * as React from 'react';
 import Avatar from '@mui/joy/Avatar';
 import Chip from '@mui/joy/Chip';
 import Box from '@mui/joy/Box';
@@ -10,6 +9,7 @@ import Typography from '@mui/joy/Typography';
 import LanguageIcon from '@mui/icons-material/Language';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { MemberData } from '@/type/member';
 
 export default function BioCard({
   text,
@@ -19,15 +19,7 @@ export default function BioCard({
   twitter,
   github,
   role,
-}: {
-  text: string;
-  name: string;
-  avatar?: string;
-  homepage?: string;
-  twitter?: string;
-  github?: string;
-  role: string;
-}) {
+}: MemberData) {
   return (
     <Card sx={{ width: 320, maxWidth: '100%', boxShadow: 'lg' }}>
       <CardContent sx={{ alignItems: 'center', textAlign: 'center' }}>

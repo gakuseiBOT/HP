@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Hamburger from './hamburger';
+import Hamburger from '../hamburger';
 
 const Header = () => {
   const navItems = [
