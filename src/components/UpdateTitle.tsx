@@ -1,25 +1,27 @@
 'use client';
-
+import { useCallback } from 'react';
 import Link from 'next/link';
 import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
 
+
+type Type = "feature" | "bugfix" | "improvement" | "other";
 type Props = {
   title: string;
   date: string;
-  type: 'feature' | 'bugfix' | 'improvement' | 'other';
+  type: Type;
   slug: string;
   isNew: boolean;
 };
 
-const typeLabels: { [key: string]: string } = {
+const typeLabels: Record<Type, string> = {
   feature: '新機能',
   bugfix: 'バグ修正',
   improvement: '改善',
   other: 'その他',
 };
 
-const typeColors: Record<string, string> = {
+const typeColors: Record<Type, string> = {
   feature: 'bg-green-200 text-green-800',
   bugfix: 'bg-red-200 text-red-800',
   improvement: 'bg-blue-200 text-blue-800',
@@ -27,7 +29,7 @@ const typeColors: Record<string, string> = {
 };
 
 export default function UpdateTitle({ title, date, type, slug, isNew }: Props) {
-  const formattedDate = (rawDate: unknown) => {
+  const formattedDate = useCallback((rawDate: unknown) => {
     let date: Date;
 
     if (typeof rawDate === 'string' || rawDate instanceof Date) {
@@ -43,18 +45,18 @@ export default function UpdateTitle({ title, date, type, slug, isNew }: Props) {
     }
 
     return format(date, 'yyyy年MM月dd日', { locale: ja });
-  };
+  }, []);
 
-  const formattedType = (type: unknown) => {
+  const formattedType = useCallback((rawType: unknown) => {
     const validTypes = ['feature', 'bugfix', 'improvement', 'other'];
 
-    if (!validTypes.includes(type as string)) {
-      console.error('Invalid type:', type);
+    if (!validTypes.includes(rawType as string)) {
+      console.error('Invalid type:', rawType);
       return '';
     }
 
-    return typeLabels[type as string] ?? type;
-  };
+    return typeLabels[rawType as Type] ?? rawType;
+  }, []);
 
   return (
     <div className="border-b py-4">

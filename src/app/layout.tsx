@@ -1,10 +1,32 @@
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import './globals.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
-import Head from 'next/head';
-import Link from 'next/link';
+import { Metadata, Viewport } from 'next';
+import Header from '@/components/layout/header';
+import Footer from '@/components/layout/footer';
+import '@/styles/globals.css';
 
-import Header from '@/components/header';
+const title = "GakuseiBOTコミュニティ - ホームページ";
+const description = "gakuseiBotは学生や開発者の支援を提供します。時間管理、クイズ機能、グローバルチャット機能などを搭載しております。";
+
+export const metadata: Metadata = {
+  title,
+  description,
+
+  openGraph: {
+    title,
+    description,
+  },
+
+  twitter: {
+    title,
+    description,
+  }
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1
+}
 
 export default function RootLayout({
   children,
@@ -13,24 +35,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <Head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0"
-        />
-      </Head>
       <GoogleAnalytics gaId={'G-T218GPX3X5'} />
       <body className="w-full">
         <Header />
         <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
-        <footer className="p-4 bg-gray-800 text-white w-full flex lg:flex-row flex-col items-center justify-center lg:justify-between relative">
-          <Link
-            href={'https://github.com/gakuseiBOT/HP/graphs/contributors'}
-            className="text-center hover:text-blue mx-auto"
-          >
-            Copyright&copy;2025 GakuseiBOTコミュニティ All Rights Reserved. See credits here.
-          </Link>
-        </footer>
+        <Footer />
       </body>
     </html>
   );
