@@ -9,18 +9,29 @@ import html from 'remark-html';
 import Link from 'next/link';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
+function sanitizeSlug(slug: string): string | null {
+  if (!slug || typeof slug !== 'string') return null;
+  if (!/^[a-zA-Z0-9_-]+$/.test(slug)) return null;
+  return slug;
+}
+
 export default async function UpdateDetailPage(props: { params: Promise<{ slug: string }> }) {
   const { slug } = await props.params;
 
-  const update = updates.find((u) => u.slug === slug);
+  const safeSlug = sanitizeSlug(slug);
+  if (!safeSlug) return notFound();
+
+  const update = updates.find((u) => u.slug === safeSlug);
   if (!update) return notFound();
 
-  const mdPath = path.join(process.cwd(), 'src/data/updates', `${update.slug}.md`);
+  const baseDir = path.resolve(process.cwd(), 'src/data/updates');
+  const mdPath = path.resolve(baseDir, `${update.slug}.md`);
+  if (!mdPath.startsWith(baseDir)) return notFound();
 
   let contentHtml = '';
   try {
     const fileContent = await fs.readFile(mdPath, 'utf-8');
-    const processed = await remark().use(html).process(fileContent);
+    const processed = await remark().use(html, { sanitize: true }).process(fileContent);
     contentHtml = processed.toString();
   } catch (err) {
     console.error('Markdown読み込み失敗:', err);

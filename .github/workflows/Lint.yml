@@ -16,6 +16,8 @@ jobs:
   lint:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -29,10 +31,10 @@ jobs:
           node-version: '24.x'
 
       - name: install bun
-        run: npm install -g bun
+        run: npm install -g bun@1.4.3
 
       - name: bun init
-        run: bun i
+        run: bun install --frozen-lockfile
 
       - name: next lint
         run: bun lint
