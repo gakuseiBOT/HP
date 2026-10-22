@@ -11,7 +11,7 @@
     "format": "prettier --write ."
   },
   "overrides": {
-    "@humanfs/node": "^0.16.8",
+    "@humanfs/node": "^0.17.0",
     "ajv@^6": "6.15.0",
     "baseline-browser-mapping": "2.11.30",
     "brace-expansion@1": "1.1.21",
