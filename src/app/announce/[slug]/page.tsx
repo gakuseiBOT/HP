@@ -2,6 +2,7 @@ import { getPostBySlug, getRecentPosts } from '@/lib/posts';
 import remarkGfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
 import PostList from '@/components/PostList';
+import { notFound } from 'next/navigation';
 
 import { Metadata } from 'next';
 
@@ -11,7 +12,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
 
   if (!post) {
     return {
-      title: '記事が見つかりません  | ',
+      title: '記事が見つかりません | ',
       description: '指定された記事は見つかりませんでした。',
     };
   }
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       title: post.title,
       description: post.description || '詳細はこの記事をご覧ください。',
       type: 'article',
-      url: `https://announce/${slug}`,
+      url: `/announce/${post.slug}`,
     },
   };
 }
@@ -36,7 +37,7 @@ export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params;
   const post = await getPostBySlug('announce', slug);
   if (!post) {
-    return <div>記事が見つかりません。</div>;
+    notFound();
   }
   const posts = await getRecentPosts('announce', 8);
 

@@ -8,28 +8,36 @@ on:
 jobs:
   show-deploy-log:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - name: Install Vercel CLI
-        run: npm install -g vercel
+        run: npm install -g vercel@latest
       - name: Link Vercel Project
-        run: vercel link --token=${{secrets.VERCEL_TOKEN}} --project ${{vars.VERCEL_PROJECT}} --yes
+        env:
+          VERCEL_TOKEN: ${{secrets.VERCEL_TOKEN}}
+        run: vercel link --token="$VERCEL_TOKEN" --project ${{vars.VERCEL_PROJECT}} --yes
       - name: Get Vercel Deploy Log
+        env:
+          VERCEL_TOKEN: ${{secrets.VERCEL_TOKEN}}
+          DEPLOY_URL: ${{ github.event.inputs.vercel-deploy-url }}
         run: |
-          vercel inspect ${{ github.event.inputs.vercel-deploy-url }} --logs --token=${{secrets.VERCEL_TOKEN}} > deploy-log.txt 2> deploy-log.txt
+          vercel inspect "$DEPLOY_URL" --logs --token="$VERCEL_TOKEN" > deploy-log.txt 2>&1 || true
         continue-on-error: true
-      - name: Insert Deploy Log
-        id: insert-deploy-log
-        run: echo deploy_log=$(cat deploy-log.txt) >> $GITHUB_ENV
       - name: Show Deploy Log
         run: cat deploy-log.txt
       - uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            const fs = require('fs');
+            let deploy_log = '';
+            try { deploy_log = fs.readFileSync('deploy-log.txt', 'utf8'); } catch (e) { deploy_log = 'Failed to read deploy log.'; }
             const output = `## 🚀 Vercel Deploy Log
             \`\`\`
-            ${process.env.deploy_log}
+            ${deploy_log}
             \`\`\`
             *Pushed by: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
             await core.summary

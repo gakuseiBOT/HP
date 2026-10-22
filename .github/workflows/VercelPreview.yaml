@@ -8,7 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       output1: ${{ steps.labels.outputs.json }}
-    permissions: write-all
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - name: Get PR labels
@@ -52,11 +54,15 @@ jobs:
           json=$(gh pr view "$PR_NUMBER" --json labels | jq -c '.labels|map(.name)')
           echo "json=$json" >> "$GITHUB_OUTPUT"
       - name: Install Vercel CLI
-        run: npm install -g vercel
+        run: npm install -g vercel@latest
       - name: Link Vercel Project
-        run: vercel link --token=${{secrets.VERCEL_TOKEN}} --project ${{vars.VERCEL_PROJECT}} --yes
+        env:
+          VERCEL_TOKEN: ${{secrets.VERCEL_TOKEN}}
+        run: vercel link --token="$VERCEL_TOKEN" --project ${{vars.VERCEL_PROJECT}} --yes
       - name: Deploy with Vercel
-        run: vercel deploy --target=staging -f --token=${{secrets.VERCEL_TOKEN}} >deployment-url.txt 2>error.txt
+        env:
+          VERCEL_TOKEN: ${{secrets.VERCEL_TOKEN}}
+        run: vercel deploy --target=staging -f --token="$VERCEL_TOKEN" >deployment-url.txt 2>error.txt
       - name: Set release url
         id: get_release_url
         run: echo release_url=$(cat deployment-url.txt) >> $GITHUB_OUTPUT
