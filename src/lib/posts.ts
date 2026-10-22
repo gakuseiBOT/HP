@@ -19,16 +19,6 @@ function sanitizeSlug(slug: string): string | null {
   return slug;
 }
 
-function resolveSafePath(dirpath: string, filename: string): string | null {
-  const base = path.resolve(POSTS_ROOT, dirpath);
-  const target = path.resolve(base, filename);
-  if (!target.startsWith(base + path.sep) && target !== base) {
-    // ensure we don't escape base
-  }
-  if (!target.startsWith(base)) return null;
-  return target;
-}
-
 export function getAllPosts(dirpath: string): Post[] {
   const postsDirectory = path.resolve(POSTS_ROOT, dirpath);
   if (!postsDirectory.startsWith(POSTS_ROOT)) return [];

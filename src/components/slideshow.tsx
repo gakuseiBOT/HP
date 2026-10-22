@@ -1,5 +1,5 @@
 'use client';
-import React, { JSX, useEffect, useState } from 'react';
+import React, { JSX, useSyncExternalStore } from 'react';
 import Image from 'next/image';
 
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
@@ -12,23 +12,20 @@ import styles from './index.module.css';
 type PropsType = {
   images: string[];
 };
-const useIsPc = () => {
-  // 初期状態をサーバー側で false とする
-  const [isPc, setIsPc] = useState(false);
+const MEDIA_QUERY = '(min-width: 1024px)';
 
-  useEffect(() => {
-    const mediaQueryList = window.matchMedia('(min-width: 1024px)');
-    const listener = () => setIsPc(mediaQueryList.matches);
-
-    // 初回に現在の状態を設定
-    setIsPc(mediaQueryList.matches);
-    mediaQueryList.addEventListener('change', listener);
-
-    return () => mediaQueryList.removeEventListener('change', listener);
-  }, []);
-
-  return isPc;
+const subscribe = (onChange: () => void) => {
+  const mediaQueryList = window.matchMedia(MEDIA_QUERY);
+  mediaQueryList.addEventListener('change', onChange);
+  return () => mediaQueryList.removeEventListener('change', onChange);
 };
+
+const getSnapshot = () => window.matchMedia(MEDIA_QUERY).matches;
+
+// サーバー側の初期状態は false とする
+const getServerSnapshot = () => false;
+
+const useIsPc = () => useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
 function Mobile({ images }: PropsType): JSX.Element {
   console.log('mobile');
