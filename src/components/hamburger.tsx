@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import NavLinks from '@/components/NavLinks';
-import Image from 'next/image';
 
 /**
  * Hamburger component.

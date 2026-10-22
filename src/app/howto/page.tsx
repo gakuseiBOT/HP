@@ -1,5 +1,4 @@
 import { NextPage } from 'next';
-import React from 'react';
 import { Metadata } from 'next';
 import CmdCard from '@/components/cmdCard';
 
