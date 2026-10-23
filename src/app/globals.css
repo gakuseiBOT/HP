@@ -1,124 +1,122 @@
 @import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background: #ffffff;
+  --foreground: #0f1026;
+  --muted: #6b7280;
+  --surface: #f8fafc;
+  --border: rgba(15, 23, 42, 0.08);
+  --accent: #2563eb;
+  --accent-foreground: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
-    rgb(var(--background-start-rgb));
+  color: var(--foreground);
+  background: radial-gradient(1200px 800px at 50% 0%, #f8fafc 0%, #ffffff 55%);
+  min-height: 100dvh;
+  line-height: 1.7;
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.18);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
+  .glass-surface {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(12px) saturate(120%);
+    -webkit-backdrop-filter: blur(12px) saturate(120%);
+  }
 }
 
 .markdown {
-  @apply text-gray-900 leading-normal break-words lg:w-2/5 w-full;
+  @apply text-slate-800 leading-relaxed break-words lg:w-2/5 w-full mx-auto;
 }
 
 .markdown > * + * {
-  @apply mt-0 mb-4;
+  @apply mt-0 mb-6;
 }
 
 .markdown li + li {
-  @apply mt-1;
+  @apply mt-2;
 }
 
 .markdown li > p + p {
-  @apply mt-6;
+  @apply mt-4;
 }
 
 .markdown strong {
-  @apply font-semibold;
+  @apply font-semibold text-slate-900;
 }
 
 .markdown a {
-  @apply text-blue-600 font-semibold;
+  @apply text-blue-600 font-medium underline underline-offset-4 decoration-blue-400/40 transition-colors hover:text-blue-700 hover:decoration-blue-600;
 }
 
 .markdown strong a {
-  @apply font-bold;
+  @apply font-semibold;
 }
 
 .markdown h1 {
-  @apply leading-tight border-b xl:text-4xl text-2xl font-bold mb-4 mt-6 pb-2;
+  @apply leading-tight text-3xl sm:text-4xl font-bold tracking-tight mb-6 mt-10 pb-2 border-b border-slate-200;
 }
 
 .markdown h2 {
-  @apply leading-tight bg-gray-800 text-white font-semibold mb-4 mt-6 xl:p-4 p-3 text-xl;
+  @apply leading-tight text-2xl sm:text-3xl font-semibold tracking-tight mb-4 mt-10;
 }
 
 .markdown h3 {
-  @apply leading-snug text-lg font-semibold mb-4 mt-6;
+  @apply leading-snug text-xl sm:text-2xl font-semibold tracking-tight mb-3 mt-8;
 }
 
 .markdown h4 {
-  @apply leading-none text-base font-semibold mb-4 mt-6;
+  @apply leading-snug text-lg font-semibold mb-3 mt-6;
 }
 
 .markdown h5 {
-  @apply leading-tight text-sm font-semibold mb-4 mt-6;
+  @apply leading-tight text-base font-semibold mb-2 mt-6;
 }
 
 .markdown h6 {
-  @apply leading-tight text-sm font-semibold text-gray-600 mb-4 mt-6;
+  @apply leading-tight text-sm font-semibold uppercase tracking-[0.2em] text-slate-500 mb-2 mt-6;
 }
 
-.markdown blockquote {
-  @apply text-base border-l-4 border-gray-300 pl-4 pr-4 text-gray-600;
-}
-
-.markdown code {
-  @apply font-mono text-sm inline bg-gray-200 rounded p-1;
-}
-
-.markdown pre {
-  @apply bg-gray-100 rounded p-4;
-}
-
-.markdown pre code {
-  @apply block bg-transparent p-0 overflow-visible rounded-none;
+.markdown p {
+  @apply text-base sm:text-lg;
 }
 
 .markdown ul {
-  @apply text-base pl-8 list-disc;
+  @apply list-disc pl-6 space-y-2;
 }
 
 .markdown ol {
-  @apply text-base pl-8 list-decimal;
+  @apply list-decimal pl-6 space-y-2;
 }
 
-.markdown kbd {
-  @apply text-xs inline-block rounded border px-1 py-5 align-middle font-normal font-mono shadow;
+.markdown blockquote {
+  @apply border-l-2 border-blue-500/60 pl-6 italic text-slate-700;
 }
 
-.markdown table {
-  @apply text-base border-gray-600;
+.markdown pre {
+  @apply rounded-2xl bg-slate-950 text-slate-100 p-6 overflow-x-auto text-sm leading-relaxed shadow-lg;
 }
 
-.markdown th {
-  @apply border py-1 px-3;
+.markdown code:not(pre code) {
+  @apply rounded-md bg-slate-100 px-1.5 py-0.5 text-sm text-slate-900;
 }
 
-.markdown td {
-  @apply border py-1 px-3;
-}
-
-/* Override pygments style background color. */
-.markdown .highlight pre {
-  @apply !bg-gray-100;
+.markdown hr {
+  @apply border-slate-200 my-10;
 }
