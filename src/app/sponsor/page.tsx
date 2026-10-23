@@ -1,7 +1,6 @@
-import { NextPage } from 'next';
-import React from 'react';
 import { Metadata } from 'next';
 import ReactMarkdown from 'react-markdown';
+import PageHeader from '@/components/PageHeader';
 
 export const metadata: Metadata = {
   title: 'スポンサー',
@@ -15,15 +14,19 @@ const sponsorDescription = `
 - Nothing
 `;
 
-const SponsorsPage: NextPage = () => {
+const SponsorsPage = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center bg-white text-black space-y-4">
+    <main className="flex w-full flex-col">
+      <PageHeader
+        eyebrow="Sponsors"
+        title="スポンサー"
+        description="当プロジェクトを支援してくださるスポンサーのご紹介です。"
+      />
       <section
         id="sponsors"
-        className="flex flex-col items-center justify-center flex-1 w-full space-y-6 px-3 text-center"
+        className="mx-auto w-full max-w-2xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16"
       >
-        <h1 className="text-3xl md:text-4xl font-bold">スポンサー</h1>
-        <div className="w-full max-w-2xl text-left text-base md:text-lg space-y-4">
+        <div className="prose prose-slate max-w-none rounded-3xl border border-slate-200/80 bg-white p-8 shadow-sm prose-headings:tracking-tight sm:p-10">
           <ReactMarkdown>{sponsorDescription}</ReactMarkdown>
         </div>
       </section>

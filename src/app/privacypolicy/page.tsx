@@ -83,7 +83,7 @@ const markdownString = `
 
 const PrivacyPolicy = () => {
   return (
-    <main className="flex min-h-screen w-full flex-col items-center bg-white text-black space-y-0 py-5 px-3">
+    <main className="mx-auto w-full max-w-3xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
       <div className="markdown">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdownString}</ReactMarkdown>
       </div>
