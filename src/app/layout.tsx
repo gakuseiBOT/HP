@@ -28,8 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <GoogleAnalytics gaId={'G-T218GPX3X5'} />
-      <body className="flex min-h-dvh w-full flex-col">
+      <body className="flex min-h-dvh w-full flex-col antialiased">
         <Header />
         <div className="flex-1">
           <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
@@ -47,6 +46,7 @@ export default function RootLayout({
             </Link>
           </div>
         </footer>
+        <GoogleAnalytics gaId={'G-T218GPX3X5'} />
       </body>
     </html>
   );
