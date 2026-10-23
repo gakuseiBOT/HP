@@ -1,8 +1,8 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import NavLinks from '@/components/NavLinks';
-import Image from 'next/image';
 
 /**
  * Hamburger component.
@@ -11,73 +11,143 @@ import Image from 'next/image';
  */
 const Hamburger = ({ links }: { links: { label: string; link: string }[] }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const dialog = dialogRef.current;
+    const previousActive = document.activeElement as HTMLElement | null;
+    const trigger = triggerRef.current;
+    const getFocusable = () =>
+      Array.from(
+        dialog?.querySelectorAll<HTMLElement>('a[href], button:not([disabled])') ?? []
+      );
+
+    getFocusable()[0]?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false);
+        return;
+      }
+
+      if (event.key !== 'Tab') return;
+
+      const focusable = getFocusable();
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+      (previousActive ?? trigger)?.focus();
+    };
+  }, [isMenuOpen]);
+
   return (
-    <nav className="relative z-10 pr-8 pl-2 py-2 flex justify-between items-center text-slate-950 min-[900px]:hidden ">
+    <>
       <button
-        className="navbar-burger flex items-center text-white p-3 flex-row-reverse flex-grow"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        ref={triggerRef}
+        type="button"
+        aria-label="メニューを開く"
+        aria-expanded={isMenuOpen}
+        aria-controls="mobile-menu"
+        onClick={() => setIsMenuOpen(true)}
+        className="inline-flex h-10 w-10 items-center justify-center border border-slate-900/15 bg-white text-slate-700 transition hover:bg-slate-50"
       >
         <svg
-          className="block h-6 w-6 fill-current"
+          className="h-5 w-5"
           viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          aria-hidden="true"
         >
-          <title>Mobile menu</title>
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+          <path d="M2 5.5a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 5.5Zm0 4.5a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 10Zm0 4.5a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 14.5Z" />
         </svg>
       </button>
-      <div
-        className={`${isMenuOpen ? 'flex' : 'hidden'} absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6`}
-      ></div>
-      {isMenuOpen && (
-        <div className="navbar-menu relative z-50">
+      {mounted &&
+        isMenuOpen &&
+        createPortal(
           <div
-            className="navbar-backdrop fixed inset-0 bg-neutral-800 opacity-75"
-            onClick={() => setIsMenuOpen(false)}
-          ></div>
-          <div className="fixed top-0 left-0 bottom-0 flex flex-col w-4/6 max-w-sm py-6 px-6 bg-neutral-950/90 overflow-y-auto">
-            {/* Logo & Close button */}
-            <div className="flex items-center mb-8">
-              <Link href="/">
-                <div className="mr-auto text-3xl font-bold leading-none">
-                  <div className="textShadow_wt text-white text-[2.2rem] font-bold text-nowrap max-[1000px]:text-[1.4rem] ">
-                    <h1 className="font-bold flex space-x-1 items-center">
-                      {/*<Image
-                                                src={"/img/UniPro_Logo.webp"}
-                                                alt="GakuseiBot's Logo"
-                                                width={50}
-                                                height={50}
-                                            />*/}
-                      <div>GakuseiBot</div>
-                    </h1>
-                  </div>
-                </div>
-              </Link>
-              <button
-                className="navbar-close ml-14"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <svg
-                  className="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+            id="mobile-menu"
+            className="fixed inset-0 z-50 lg:hidden"
+          >
+            <div
+              className="absolute inset-0 bg-slate-950/50"
+              onClick={() => setIsMenuOpen(false)}
+              aria-hidden="true"
+            />
+            <div
+              ref={dialogRef}
+              role="dialog"
+              aria-modal="true"
+              aria-label="サイトメニュー"
+              className="absolute right-0 top-0 flex h-full w-[88%] max-w-sm flex-col gap-6 overflow-y-auto border-l border-slate-900/10 bg-white p-6"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                  Menu
+                </span>
+                <button
+                  type="button"
+                  aria-label="メニューを閉じる"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="inline-flex h-10 w-10 items-center justify-center border border-slate-900/15 text-slate-600 transition hover:bg-slate-50"
                 >
-                  <path d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-              </button>
-            </div>
-            <div>
+                  <svg
+                    className="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      d="M6 6l12 12M18 6 6 18"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <Link
+                href="/"
+                onClick={() => setIsMenuOpen(false)}
+                className="flex items-center gap-2"
+              >
+                <span className="text-xl font-semibold tracking-tight text-slate-900">GakuseiBot</span>
+              </Link>
               <NavLinks
                 setIsMenuOpen={setIsMenuOpen}
                 links={links}
+                propClass="flex-col items-stretch gap-1 [&>a]:px-4 [&>a]:py-3 [&>a]:text-base [&>a]:w-full"
               />
             </div>
-          </div>
-        </div>
-      )}
-    </nav>
+          </div>,
+          document.body
+        )}
+    </>
   );
 };
 

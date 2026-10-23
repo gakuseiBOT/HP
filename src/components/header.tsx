@@ -1,69 +1,75 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Hamburger from './hamburger';
+import NavLinks from './NavLinks';
+
+const navItems = [
+  {
+    label: 'ホーム',
+    link: '/',
+  },
+  {
+    label: 'お知らせ',
+    link: '/announce',
+  },
+  {
+    label: '使い方',
+    link: '/howto',
+  },
+  {
+    label: '利用規約',
+    link: '/tos',
+  },
+  {
+    label: 'プライバシーポリシー',
+    link: '/privacypolicy',
+  },
+  {
+    label: '開発者紹介',
+    link: '/member',
+  },
+  {
+    label: 'お問い合わせ',
+    link: '/contact',
+  },
+  {
+    label: '更新情報',
+    link: '/updates',
+  },
+  {
+    label: 'スポンサー',
+    link: '/sponsor',
+  },
+];
 
 const Header = () => {
-  const navItems = [
-    {
-      label: 'ホーム',
-      link: '/',
-    },
-    {
-      label: 'お知らせ',
-      link: '/announce',
-    },
-    {
-      label: '使い方',
-      link: '/howto',
-    },
-    {
-      label: '利用規約',
-      link: '/tos',
-    },
-    {
-      label: 'プライバシーポリシー',
-      link: '/privacypolicy',
-    },
-    {
-      label: '開発者紹介',
-      link: '/member',
-    },
-    {
-      label: 'お問い合わせ',
-      link: '/contact',
-    },
-    {
-      label: '更新情報',
-      link: '/updates',
-    },
-    {
-      label: 'スポンサー',
-      link: '/sponsor',
-    },
-  ];
   return (
-    <header className="flex flex-col justify-center items-center bg-[url('/img/header.webp')] bg-center bg-cover text-white w-full">
-      <Link
-        href="/"
-        className="mt-6"
-      >
-        <Image
-          src={'/img/logo.png'}
-          alt="GakuseiBot's Logo"
-          width={352}
-          height={81}
-        />
-      </Link>
-      <nav className="w-full bg-black bg-opacity-50 justify-center hidden lg:flex items-center p-2 font-semibold m-3">
-        <ul className="flex right-4 text-right space-x-5 justify-center">
-          {navItems.map((item) => (
-            <li key={item.label}>
-              <Link href={item.link}>{item.label}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <Hamburger links={navItems} />
+    <header className="sticky top-0 z-40 w-full border-b border-slate-900/10 bg-white/95">
+      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-20 lg:px-8">
+        <Link
+          href="/"
+          className="flex shrink-0 items-center gap-2"
+          aria-label="GakuseiBot ホーム"
+        >
+          <Image
+            src={'/img/logo.png'}
+            alt="GakuseiBot's Logo"
+            width={352}
+            height={81}
+            priority
+            className="h-8 w-auto lg:h-10"
+          />
+        </Link>
+        <nav
+          className="hidden lg:block"
+          aria-label="メインナビゲーション"
+        >
+          <NavLinks links={navItems} />
+        </nav>
+        <div className="lg:hidden">
+          <Hamburger links={navItems} />
+        </div>
+      </div>
     </header>
   );
 };

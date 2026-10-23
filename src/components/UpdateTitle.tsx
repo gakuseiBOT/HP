@@ -20,29 +20,29 @@ const typeLabels: { [key: string]: string } = {
 };
 
 const typeColors: Record<string, string> = {
-  feature: 'bg-green-200 text-green-800',
-  bugfix: 'bg-red-200 text-red-800',
-  improvement: 'bg-blue-200 text-blue-800',
-  other: 'bg-gray-200 text-gray-800',
+  feature: 'bg-slate-900 text-white',
+  bugfix: 'bg-slate-700 text-white',
+  improvement: 'bg-slate-600 text-white',
+  other: 'bg-slate-500 text-white',
 };
 
 export default function UpdateTitle({ title, date, type, slug, isNew }: Props) {
   const formattedDate = (rawDate: unknown) => {
-    let date: Date;
+    let parsed: Date;
 
     if (typeof rawDate === 'string' || rawDate instanceof Date) {
-      date = new Date(rawDate);
+      parsed = new Date(rawDate);
     } else {
       console.error('Invalid date format:', rawDate);
       return '不正な日付です';
     }
 
-    if (isNaN(date.getTime())) {
+    if (isNaN(parsed.getTime())) {
       console.error('Invalid date format:', rawDate);
       return '不正な日付です';
     }
 
-    return format(date, 'yyyy年MM月dd日', { locale: ja });
+    return format(parsed, 'yyyy年MM月dd日', { locale: ja });
   };
 
   const formattedType = (type: unknown) => {
@@ -57,22 +57,26 @@ export default function UpdateTitle({ title, date, type, slug, isNew }: Props) {
   };
 
   return (
-    <div className="border-b py-4">
+    <article className="py-4">
       <Link
         href={`/updates/${slug}`}
-        className="text-blue-600 hover:underline block"
+        className="block"
       >
         <div className="flex items-center gap-2">
-          <span className="font-semibold">{title}</span>
-          {isNew && <span className="text-xs text-white bg-red-500 px-2 py-0.5 rounded">NEW</span>}
+          <span className="font-semibold text-slate-900 hover:underline">{title}</span>
+          {isNew && (
+            <span className="bg-slate-900 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
+              NEW
+            </span>
+          )}
+        </div>
+        <div className="mt-1 flex flex-wrap items-center gap-3 text-xs text-slate-500">
+          <time>{formattedDate(date)}</time>
+          <span className={`px-1.5 py-0.5 ${typeColors[type] ?? typeColors.other}`}>
+            {formattedType(type)}
+          </span>
         </div>
       </Link>
-      <div className="text-sm text-gray-500 mt-1 flex items-center gap-4">
-        <span>{formattedDate(date)}</span>
-        <span className={`px-2 py-0.5 rounded text-xs ${typeColors[type]}`}>
-          {formattedType(type)}
-        </span>
-      </div>
-    </div>
+    </article>
   );
 }

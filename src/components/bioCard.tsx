@@ -1,15 +1,15 @@
-'use client';
-import * as React from 'react';
-import Avatar from '@mui/joy/Avatar';
-import Chip from '@mui/joy/Chip';
-import Box from '@mui/joy/Box';
-import Card from '@mui/joy/Card';
-import CardContent from '@mui/joy/CardContent';
-import IconButton from '@mui/joy/IconButton';
-import Typography from '@mui/joy/Typography';
+import Image from 'next/image';
 import LanguageIcon from '@mui/icons-material/Language';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
+
+const roleStyles: Record<string, string> = {
+  Owner: 'bg-amber-50 text-amber-700 ring-amber-200',
+  Engineer: 'bg-blue-50 text-blue-700 ring-blue-200',
+  Adviser: 'bg-violet-50 text-violet-700 ring-violet-200',
+  Moderator: 'bg-emerald-50 text-emerald-700 ring-emerald-200',
+  Creator: 'bg-rose-50 text-rose-700 ring-rose-200',
+};
 
 export default function BioCard({
   text,
@@ -29,76 +29,69 @@ export default function BioCard({
   role: string;
 }) {
   return (
-    <Card sx={{ width: 320, maxWidth: '100%', boxShadow: 'lg' }}>
-      <CardContent sx={{ alignItems: 'center', textAlign: 'center' }}>
-        <Avatar
-          src={avatar}
-          sx={{ '--Avatar-size': '4rem' }}
-        />
-        <Chip
-          size="sm"
-          variant="soft"
-          color="primary"
-          sx={{
-            mt: -1,
-            mb: 1,
-            border: '3px solid',
-            borderColor: 'background.surface',
-          }}
-        >
-          {role}
-        </Chip>
-        <Typography level="title-lg">{name}</Typography>
-        <Typography
-          level="body-sm"
-          sx={{ maxWidth: '24ch' }}
-        >
-          {text}
-        </Typography>
-        <Box
-          sx={{
-            display: 'flex',
-            gap: 2,
-            mt: 2,
-            '& > button': { borderRadius: '2rem' },
-          }}
-          height={32}
-        >
+    <article className="group flex w-full max-w-sm flex-col items-center border border-slate-900/10 bg-white p-6 text-center">
+      <div className="relative h-16 w-16 overflow-hidden rounded-full bg-slate-100 ring-4 ring-slate-50">
+        {avatar ? (
+          <Image
+            src={avatar}
+            alt={`${name} のアイコン`}
+            width={64}
+            height={64}
+            unoptimized
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <span className="flex h-full w-full items-center justify-center text-xl font-bold text-slate-400">
+            {name.slice(0, 1)}
+          </span>
+        )}
+      </div>
+      <span
+        className={`mt-4 rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ring-inset ${
+          roleStyles[role] ?? 'bg-slate-100 text-slate-600 ring-slate-200'
+        }`}
+      >
+        {role}
+      </span>
+      <h3 className="mt-2 text-lg font-semibold tracking-tight text-slate-900">{name}</h3>
+      <p className="mt-2 text-sm leading-relaxed text-slate-600">{text}</p>
+      {(github || twitter || homepage) && (
+        <div className="mt-5 flex items-center gap-2">
           {github && (
-            <IconButton
-              size="sm"
-              variant="plain"
-              color="neutral"
-              component="a"
+            <a
               href={`https://github.com/${github}`}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${name} の GitHub`}
+              className="flex h-9 w-9 items-center justify-center rounded-full text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900"
             >
-              <GitHubIcon />
-            </IconButton>
+              <GitHubIcon style={{ fontSize: 18 }} />
+            </a>
           )}
           {twitter && (
-            <IconButton
-              size="sm"
-              variant="plain"
-              color="neutral"
-              component="a"
+            <a
               href={`https://twitter.com/${twitter}`}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${name} の X (Twitter)`}
+              className="flex h-9 w-9 items-center justify-center rounded-full text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900"
             >
-              <TwitterIcon />
-            </IconButton>
+              <TwitterIcon style={{ fontSize: 18 }} />
+            </a>
           )}
           {homepage && (
-            <IconButton
-              size="sm"
-              variant="plain"
-              color="neutral"
-              component="a"
+            <a
               href={homepage}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${name} のウェブサイト`}
+              className="flex h-9 w-9 items-center justify-center rounded-full text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900"
             >
-              <LanguageIcon />
-            </IconButton>
+              <LanguageIcon style={{ fontSize: 18 }} />
+            </a>
           )}
-        </Box>
-      </CardContent>
-    </Card>
+        </div>
+      )}
+    </article>
   );
 }
