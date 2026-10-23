@@ -2,6 +2,7 @@ import { NextPage } from 'next';
 import React from 'react';
 import { Metadata } from 'next';
 import CmdCard from '@/components/cmdCard';
+import PageHeader from '@/components/PageHeader';
 
 export const metadata: Metadata = {
   title: 'コマンド一覧 - gakuseiBotコミュニティ',
@@ -10,17 +11,15 @@ export const metadata: Metadata = {
 
 const Howto: NextPage = () => {
   return (
-    <main className="flex flex-col min-h-screen bg-white text-black space-y-0">
-      <section
-        id="head"
-        className="flex flex-col border border-gray-300 p-5 items-center justify-center w-full min-h-[370px] space-y-5"
-      >
-        <h1 className="text-4xl font-bold">使い方</h1>
-        <p className="text-lg">gakuseiBotのコマンド一覧です。</p>
-      </section>
+    <main className="flex w-full flex-col">
+      <PageHeader
+        eyebrow="Commands"
+        title="使い方"
+        description="gakuseiBot で利用できるコマンドの一覧です。"
+      />
       <section
         id="commands"
-        className="lg:w-2/5 w-full flex flex-col mx-auto space-y-5 p-5"
+        className="mx-auto flex w-full max-w-3xl flex-col space-y-4 px-4 py-12 sm:px-6 lg:px-8 lg:py-16"
       >
         {/* group-1 */}
         <CmdCard
@@ -243,7 +242,9 @@ const Howto: NextPage = () => {
             },
           ]}
         />
-        <h1 className="text-2xl font-semibold">停止中のコマンド</h1>
+        <h2 className="pt-8 text-xl font-bold tracking-tight text-slate-900 sm:text-2xl">
+          停止中のコマンド
+        </h2>
         {/* ここからisRunnning={false} */}
         {/* group-1 ここから */}
         <CmdCard

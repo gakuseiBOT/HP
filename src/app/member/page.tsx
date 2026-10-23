@@ -2,6 +2,7 @@ import { NextPage } from 'next';
 import React from 'react';
 import { Metadata } from 'next';
 import BioCard from '@/components/bioCard';
+import PageHeader from '@/components/PageHeader';
 
 export const metadata: Metadata = {
   title: '開発者紹介 - gakuseiBotコミュニティ',
@@ -109,17 +110,15 @@ const MEMBER_DATA: MemberData[] = [
 
 const Member: NextPage = () => {
   return (
-    <main className="flex flex-col min-h-screen bg-white text-black space-y-0">
-      <section
-        id="head"
-        className="flex flex-col border border-gray-300 p-5 items-center justify-center w-full min-h-[370px] space-y-5"
-      >
-        <h1 className="text-4xl font-bold">開発者紹介</h1>
-        <p className="text-lg">gakuseiBOTの開発を支えるメンバーたちをご紹介します。</p>
-      </section>
+    <main className="flex w-full flex-col">
+      <PageHeader
+        eyebrow="Team"
+        title="開発者紹介"
+        description="gakuseiBOT の開発を支えるメンバーたちをご紹介します。"
+      />
       <section
         id="members"
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 p-20 justify-items-center items-center mx-auto max-w-7xl"
+        className="mx-auto grid w-full max-w-6xl grid-cols-1 justify-items-center gap-6 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-3 lg:gap-8 lg:px-8 lg:py-16"
       >
         { MEMBER_DATA.map((member, index) => (
           <BioCard
