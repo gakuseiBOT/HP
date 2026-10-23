@@ -31,7 +31,7 @@ jobs:
           node-version: '24.x'
 
       - name: install bun
-        run: npm install -g bun@1.4.3
+        run: npm install -g bun@1.4.4
 
       - name: bun init
         run: bun install --frozen-lockfile
