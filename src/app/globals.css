@@ -18,9 +18,28 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 body {
   color: var(--foreground);
-  background: radial-gradient(1200px 800px at 50% 0%, #f8fafc 0%, #ffffff 55%);
+  background-color: #f6f7fb;
+  background-image: radial-gradient(1200px 800px at 50% -10%, rgba(59, 130, 246, 0.09) 0%, transparent 62%),
+    radial-gradient(720px 580px at 12% 18%, rgba(14, 165, 233, 0.06) 0%, transparent 58%),
+    radial-gradient(680px 560px at 88% 26%, rgba(99, 102, 241, 0.05) 0%, transparent 62%),
+    linear-gradient(180deg, #f8fafc 0%, #f5f6fa 100%);
+  background-attachment: fixed;
   min-height: 100dvh;
   line-height: 1.7;
 }
@@ -35,9 +54,14 @@ body {
   }
 
   .glass-surface {
-    background: rgba(255, 255, 255, 0.82);
-    backdrop-filter: blur(12px) saturate(120%);
-    -webkit-backdrop-filter: blur(12px) saturate(120%);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+  }
+
+  .dot-grid {
+    background-image: radial-gradient(rgba(15, 23, 42, 0.07) 1px, transparent 1px);
+    background-size: 24px 24px;
   }
 }
 
