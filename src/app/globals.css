@@ -42,7 +42,7 @@ body {
 }
 
 .markdown {
-  @apply text-slate-800 leading-relaxed break-words lg:w-2/5 w-full mx-auto;
+  @apply text-slate-800 leading-relaxed break-words w-full;
 }
 
 .markdown > * + * {

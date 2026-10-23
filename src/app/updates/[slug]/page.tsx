@@ -41,25 +41,24 @@ export default async function UpdateDetailPage(props: { params: Promise<{ slug: 
   const formattedDate = format(new Date(update.date), 'yyyy年MM月dd日', { locale: ja });
 
   return (
-    <main className="flex flex-col items-center w-full min-h-screen space-y-0 text-black bg-white">
-      <section className="w-full border flex flex-col items-center p-5 min-h-[150px] bg-white text-black space-y-6 justify-center">
-        <h2 className="mt-10 text-4xl font-bold">更新情報</h2>
-        <h1 className="text-2xl font-bold mb-2">{update.title}</h1>
-        <div className="text-sm mb-4">更新日: {formattedDate}</div>
-      </section>
-
-      <div className="w-full flex justify-start max-w-2xl mx-auto">
-        <Link
-          href="/updates"
-          className="text-lg mt-6 mb-4 flex items-center text-gray-500 hover:text-gray-700 transition-colors duration-150 font-medium gap-1"
-        >
-          <ArrowBackIcon style={{ fontSize: 20 }} /> 戻る
-        </Link>
-      </div>
-      <div
-        className="prose prose-sm prose-blue"
-        dangerouslySetInnerHTML={{ __html: contentHtml }}
-      />
+    <main className="mx-auto flex w-full max-w-3xl flex-col px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <Link
+        href="/updates"
+        className="inline-flex w-fit items-center gap-1 text-sm font-medium text-slate-500 transition-colors hover:text-blue-600"
+      >
+        <ArrowBackIcon style={{ fontSize: 18 }} /> 更新情報一覧
+      </Link>
+      <article className="mt-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-600">Updates</p>
+        <h1 className="mt-2 text-balance text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          {update.title}
+        </h1>
+        <time className="mt-3 block text-sm text-slate-500">更新日: {formattedDate}</time>
+        <div
+          className="prose prose-slate prose-sm mt-8 max-w-none prose-headings:tracking-tight prose-a:text-blue-600 sm:prose-base"
+          dangerouslySetInnerHTML={{ __html: contentHtml }}
+        />
+      </article>
     </main>
   );
 }

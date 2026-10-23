@@ -3,6 +3,7 @@ import remarkGfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
 import PostList from '@/components/PostList';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 
 import { Metadata } from 'next';
 
@@ -42,17 +43,25 @@ export default async function PostPage({ params }: PostPageProps) {
   const posts = await getRecentPosts('announce', 8);
 
   return (
-    <div className="bg-white min-h-screen w-full text-black p-5">
-      <article className="min-h-96 p-4 w-full flex flex-col items-center">
-        <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
-        <p className="text-gray-600 mb-2">
+    <div className="mx-auto w-full max-w-3xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <Link
+        href="/announce"
+        className="text-sm font-medium text-slate-500 transition-colors hover:text-blue-600"
+      >
+        ← お知らせ一覧
+      </Link>
+      <article className="mt-6">
+        <h1 className="text-balance text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          {post.title}
+        </h1>
+        <time className="mt-3 block text-sm text-slate-500">
           {new Date(post.date).toLocaleDateString('ja-JP', {
             year: 'numeric',
             month: 'long',
             day: 'numeric',
           })}
-        </p>
-        <div className="markdown mx-auto">
+        </time>
+        <div className="markdown mt-8">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             components={{ h1: 'h2' }}
@@ -61,12 +70,15 @@ export default async function PostPage({ params }: PostPageProps) {
           </ReactMarkdown>
         </div>
       </article>
-      <h1 className="text-2xl mx-auto lg:w-2/5 w-4/5 text-left mb-5">最近のアナウンス</h1>
-      <PostList
-        posts={posts}
-        dirname="announce"
-        className={'min-h-[200px] bg-white lg:w-2/5 w-4/5 mx-auto'}
-      />
+      <section className="mt-16 border-t border-slate-200/70 pt-10">
+        <h2 className="text-xl font-bold tracking-tight text-slate-900">最近のアナウンス</h2>
+        <PostList
+          posts={posts}
+          dirname="announce"
+          className="mt-6"
+          btnDisabled={true}
+        />
+      </section>
     </div>
   );
 }

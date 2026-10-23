@@ -1,4 +1,5 @@
 import UpdateTitle from '@/components/UpdateTitle';
+import PageHeader from '@/components/PageHeader';
 import fs from 'fs/promises';
 import path from 'path';
 import { Metadata } from 'next';
@@ -29,26 +30,25 @@ export default async function UpdatesPage() {
   const updates: UpdateItem[] = JSON.parse(file);
 
   return (
-    <main className="flex flex-col items-center min-h-screen space-y-0 text-black bg-white p-20 w-full">
-      <section
-        id="updates-head"
-        className="w-full flex flex-col items-center p-5 bg-white text-black space-y-6 justify-center"
-      >
-        <h1 className="text-4xl font-bold">更新情報</h1>
-        <p className="text-lg">日々新しくなるgakuseiBOTの様子をお伝えします。</p>
-      </section>
-
-      <div className="min-w-3/5 px-4 mx-auto">
-        {updates.map((update) => (
-          <UpdateTitle
-            key={update.slug}
-            title={update.title}
-            date={update.date}
-            type={update.type}
-            slug={update.slug}
-            isNew={isNew(update.date)}
-          />
-        ))}
+    <main className="flex w-full flex-col">
+      <PageHeader
+        eyebrow="Updates"
+        title="更新情報"
+        description="日々新しくなる gakuseiBOT の様子をお伝えします。"
+      />
+      <div className="mx-auto w-full max-w-3xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+        <div className="divide-y divide-slate-200 rounded-3xl border border-slate-200/80 bg-white px-5 shadow-sm sm:px-8">
+          {updates.map((update) => (
+            <UpdateTitle
+              key={update.slug}
+              title={update.title}
+              date={update.date}
+              type={update.type}
+              slug={update.slug}
+              isNew={isNew(update.date)}
+            />
+          ))}
+        </div>
       </div>
     </main>
   );
