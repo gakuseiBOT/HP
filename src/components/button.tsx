@@ -31,7 +31,7 @@ export const Button = forwardRef<HTMLButtonElement, Props<AS>>((props, ref) => {
   if ('href' in props && 'disabled' in props && props.disabled) {
     return (
       <span
-        className={`${styles.disabled} inline-flex h-12 items-center justify-center rounded-full bg-slate-200 px-7 text-sm font-semibold text-slate-500 ${props.className ?? ''}`}
+        className={`${styles.disabled} inline-flex h-10 items-center justify-center rounded-md bg-slate-200 px-6 text-sm font-semibold text-slate-500 ${props.className ?? ''}`}
       >
         {props.children}
       </span>
@@ -49,7 +49,7 @@ export const Button = forwardRef<HTMLButtonElement, Props<AS>>((props, ref) => {
     <button
       ref={ref}
       onClick={(event) => handleClick(event, href)}
-      className={`group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-slate-900 px-7 text-sm font-semibold text-white shadow-lg shadow-slate-900/10 transition duration-200 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-xl ${className ?? ''}`}
+      className={`group inline-flex h-10 items-center justify-center gap-2 rounded-md bg-slate-900 px-6 text-sm font-semibold text-white transition hover:bg-slate-800 ${className ?? ''}`}
     >
       <span>{props.children}</span>
       <svg

@@ -29,7 +29,7 @@ export default function BioCard({
   role: string;
 }) {
   return (
-    <article className="group flex w-full max-w-sm flex-col items-center rounded-3xl border border-slate-200/80 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg">
+    <article className="group flex w-full max-w-sm flex-col items-center border border-slate-900/10 bg-white p-6 text-center">
       <div className="relative h-16 w-16 overflow-hidden rounded-full bg-slate-100 ring-4 ring-slate-50">
         {avatar ? (
           <Image

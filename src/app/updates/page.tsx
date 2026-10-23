@@ -37,7 +37,7 @@ export default async function UpdatesPage() {
         description="日々新しくなる gakuseiBOT の様子をお伝えします。"
       />
       <div className="mx-auto w-full max-w-3xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-        <div className="divide-y divide-slate-200 rounded-3xl border border-slate-200/80 bg-white px-5 shadow-sm sm:px-8">
+        <div className="divide-y divide-slate-900/10 border border-slate-900/10 bg-white px-5 sm:px-8">
           {updates.map((update) => (
             <UpdateTitle
               key={update.slug}

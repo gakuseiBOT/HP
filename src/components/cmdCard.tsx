@@ -14,10 +14,8 @@ type arg = {
 export default function CmdCard({ title, description, isRunning = true, args }: CmdCardProps) {
   return (
     <article
-      className={`rounded-2xl border p-5 shadow-sm transition-shadow sm:p-6 ${
-        isRunning
-          ? 'border-slate-200/80 bg-white shadow-slate-200/50 hover:shadow-md'
-          : 'border-slate-200/80 bg-slate-50'
+      className={`border p-5 sm:p-6 ${
+        isRunning ? 'border-slate-900/10 bg-white' : 'border-slate-900/10 bg-slate-50'
       }`}
     >
       <div className="flex flex-wrap items-center gap-2">

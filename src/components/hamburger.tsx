@@ -76,7 +76,7 @@ const Hamburger = ({ links }: { links: { label: string; link: string }[] }) => {
         aria-expanded={isMenuOpen}
         aria-controls="mobile-menu"
         onClick={() => setIsMenuOpen(true)}
-        className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-900/10 bg-white/80 text-slate-700 transition hover:border-slate-900/20 hover:text-slate-900"
+        className="inline-flex h-10 w-10 items-center justify-center border border-slate-900/15 bg-white text-slate-700 transition hover:bg-slate-50"
       >
         <svg
           className="h-5 w-5"
@@ -104,7 +104,7 @@ const Hamburger = ({ links }: { links: { label: string; link: string }[] }) => {
               role="dialog"
               aria-modal="true"
               aria-label="サイトメニュー"
-              className="absolute right-0 top-0 flex h-full w-[88%] max-w-sm flex-col gap-6 overflow-y-auto border-l border-slate-900/10 bg-white p-6 shadow-2xl"
+              className="absolute right-0 top-0 flex h-full w-[88%] max-w-sm flex-col gap-6 overflow-y-auto border-l border-slate-900/10 bg-white p-6"
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
@@ -114,7 +114,7 @@ const Hamburger = ({ links }: { links: { label: string; link: string }[] }) => {
                   type="button"
                   aria-label="メニューを閉じる"
                   onClick={() => setIsMenuOpen(false)}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-900/10 text-slate-600 transition hover:border-slate-900/20 hover:text-slate-900"
+                  className="inline-flex h-10 w-10 items-center justify-center border border-slate-900/15 text-slate-600 transition hover:bg-slate-50"
                 >
                   <svg
                     className="h-5 w-5"

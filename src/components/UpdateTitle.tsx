@@ -20,10 +20,10 @@ const typeLabels: { [key: string]: string } = {
 };
 
 const typeColors: Record<string, string> = {
-  feature: 'bg-emerald-50 text-emerald-700 ring-emerald-200',
-  bugfix: 'bg-rose-50 text-rose-700 ring-rose-200',
-  improvement: 'bg-blue-50 text-blue-700 ring-blue-200',
-  other: 'bg-slate-100 text-slate-600 ring-slate-200',
+  feature: 'bg-slate-900 text-white',
+  bugfix: 'bg-slate-700 text-white',
+  improvement: 'bg-slate-600 text-white',
+  other: 'bg-slate-500 text-white',
 };
 
 export default function UpdateTitle({ title, date, type, slug, isNew }: Props) {
@@ -57,26 +57,22 @@ export default function UpdateTitle({ title, date, type, slug, isNew }: Props) {
   };
 
   return (
-    <article className="group py-5">
+    <article className="py-4">
       <Link
         href={`/updates/${slug}`}
         className="block"
       >
         <div className="flex items-center gap-2">
-          <span className="font-semibold text-slate-900 transition-colors group-hover:text-blue-700">
-            {title}
-          </span>
+          <span className="font-semibold text-slate-900 hover:underline">{title}</span>
           {isNew && (
-            <span className="rounded-full bg-red-500 px-2 py-0.5 text-[10px] font-bold tracking-wide text-white">
+            <span className="bg-slate-900 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
               NEW
             </span>
           )}
         </div>
-        <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-slate-500">
+        <div className="mt-1 flex flex-wrap items-center gap-3 text-xs text-slate-500">
           <time>{formattedDate(date)}</time>
-          <span
-            className={`rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ring-inset ${typeColors[type] ?? typeColors.other}`}
-          >
+          <span className={`px-1.5 py-0.5 ${typeColors[type] ?? typeColors.other}`}>
             {formattedType(type)}
           </span>
         </div>

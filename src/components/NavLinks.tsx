@@ -30,10 +30,10 @@ const NavLinks = ({ links, propClass, setIsMenuOpen }: PropsType) => {
             onClick={() => setIsMenuOpen && setIsMenuOpen(false)}
             href={link.link}
             aria-current={isActive ? 'page' : undefined}
-            className={`rounded-full px-3 py-2 text-sm font-medium transition-colors ${
+            className={`px-3 py-2 text-sm transition-colors ${
               isActive
-                ? 'bg-blue-50 text-blue-700'
-                : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                ? 'bg-slate-900 text-white'
+                : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900'
             }`}
             key={link.label}
           >

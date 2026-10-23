@@ -44,7 +44,7 @@ const navItems = [
 
 const Header = () => {
   return (
-    <header className="glass-surface sticky top-0 z-40 w-full border-b border-slate-900/10 shadow-[0_1px_0_rgba(15,23,42,0.04)]">
+    <header className="sticky top-0 z-40 w-full border-b border-slate-900/10 bg-white/95">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-20 lg:px-8">
         <Link
           href="/"
