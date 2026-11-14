@@ -13,7 +13,7 @@ jobs:
       - name: Use Node.js 22.x
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
-          node-version: '24.x'
+          node-version: '26.x'
       - name: Install Bun
         run: npm install -g bun@1.4.4
       - name: Install dependencies
